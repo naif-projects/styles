@@ -3,5 +3,17 @@
 @tailwind variants;
 @tailwind components;
 
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+
 // components
+@import 'lib/global';
+@import 'lib/grid';
+
+@import 'lib/typography';
+@import 'lib/form';
 @import 'lib/buttons';
+
+@import 'lib/sidebar';
+@import 'lib/user-profile';
+@import 'lib/navbar';

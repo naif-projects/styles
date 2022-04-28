@@ -1,0 +1,29 @@
+.sidebar {
+  @apply max-w-[15rem] w-full font-cairo whitespace-nowrap;
+  @apply min-h-screen px-4 bg-primary-dark text-secondary-lighter;
+
+  &-brand {
+    @apply mt-7 inline-block text-center w-full;
+  }
+
+  .list {
+    @apply mt-7;
+  }
+
+  .list-item-link {
+    @apply py-3 flex rounded;
+
+    &.active {
+      @apply relative bg-secondary-light text-primary-dark;
+    }
+
+    &.active::before {
+      content: '';
+      @apply absolute h-full bg-secondary-light rounded-l top-0 -right-5 w-2;
+    }
+  }
+
+  .list-item-icon {
+    @apply w-5 mx-5;
+  }
+}

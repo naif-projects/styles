@@ -1,19 +1,23 @@
 module.exports = {
-  purge: ["./scss/index.scss", "./scss/*/*.scss"],
+  purge: ['./scss/index.scss', './scss/*/*.scss'],
   theme: {
     extend: {
       colors: {
-        "primary-lighter": "#96BBFF",
-        "primary-light": "#73A4FF",
-        "primary-base": "#588FF4",
-        "primary-dark": "#4E7DCB",
-        "primary-darker": "#3869BA",
+        'primary-lighter': '#96BBFF',
+        'primary-light': '#73A4FF',
+        'primary-base': '#588FF4',
+        'primary-dark': '#4E7DCB',
+        'primary-darker': '#3869BA',
 
-        "secondary-lighter": "#F7F9FE",
-        "secondary-light": "#DDE9FF",
-        "secondary-base": "#C5D9FE",
-        "secondary-dark": "#B9D1FE",
-        "secondary-darker": "#B1C9F2",
+        'secondary-lighter': '#F7F9FE',
+        'secondary-light': '#DDE9FF',
+        'secondary-base': '#C5D9FE',
+        'secondary-dark': '#B9D1FE',
+        'secondary-darker': '#B1C9F2',
+      },
+
+      fontFamily: {
+        cairo: ['Cairo', 'sans-serif'],
       },
     },
   },

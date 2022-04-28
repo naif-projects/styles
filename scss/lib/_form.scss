@@ -1,0 +1,22 @@
+.form-group {
+  @apply flex flex-col space-y-3 mb-7;
+}
+
+.form-control {
+  @apply px-4 py-2 rounded-md border-2 border-secondary-darker text-primary-dark;
+  @apply focus:outline-none focus:border-primary-base bg-secondary-lighter;
+}
+
+// select
+select.form-control {
+  @apply appearance-none bg-no-repeat;
+
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-position-x: 0%;
+  background-position-y: 0.5rem;
+}
+
+// textarea
+textarea.form-control {
+  @apply max-h-40;
+}

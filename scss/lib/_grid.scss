@@ -1,60 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap");
-@tailwind base;
-@tailwind utilities;
-@tailwind variants;
-@tailwind components;
-body {
-  @apply font-cairo;
-}
-
-svg {
-  width: 100%;
-}
-
-.dashboard {
-  @apply flex justify-between overflow-x-hidden;
-}
-.dashboard .sidebar {
-  @apply flex-1;
-}
-.dashboard-content {
-  @apply flex-1;
-}
-
-.modal {
-  @apply w-screen h-screen bg-gray-800/40 fixed top-0 left-0 z-50;
-  @apply flex justify-center items-center px-6;
-  overscroll-behavior-y: contain;
-  overflow: auto;
-}
-.modal-container {
-  @apply bg-secondary-lighter text-primary-dark max-w-[35rem] w-full rounded;
-}
-.modal .title {
-  @apply text-primary-darker;
-}
-.modal-header {
-  @apply py-3 p-6 flex justify-between items-center border-b border-primary-light;
-}
-.modal-header .close-btn .icon {
-  @apply w-8 h-8;
-}
-.modal-content {
-  @apply py-4 px-6 min-h-[10rem] max-h-80 overflow-y-scroll;
-}
-.modal h1 {
-  height: 400px;
-}
-
-::-webkit-scrollbar {
-  @apply w-1 h-1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  @apply bg-primary-base rounded-3xl;
-}
-
 .row {
   --bs-gutter-x: 0;
   --bs-gutter-y: 0;
@@ -64,7 +7,6 @@ svg {
   margin-right: calc(var(--bs-gutter-x) * -0.5);
   margin-left: calc(var(--bs-gutter-x) * -0.5);
 }
-
 .row > * {
   flex-shrink: 0;
   width: 100%;
@@ -510,6 +452,7 @@ svg {
     width: 100%;
   }
 }
+
 @media (min-width: 992px) {
   .col-lg-auto {
     flex: 0 0 auto;
@@ -708,110 +651,3 @@ svg {
     width: 100%;
   }
 }
-.text-base {
-  @apply text-primary-dark font-medium;
-}
-
-.form-group {
-  @apply flex flex-col space-y-3 mb-7;
-}
-
-.form-control {
-  @apply px-4 py-2 rounded-md border-2 border-secondary-darker text-primary-dark;
-  @apply focus:outline-none focus:border-primary-base bg-secondary-lighter;
-}
-
-select.form-control {
-  @apply appearance-none bg-no-repeat;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-  background-position-x: 0%;
-  background-position-y: 0.5rem;
-}
-
-textarea.form-control {
-  @apply max-h-40;
-}
-
-.btn {
-  @apply px-5 py-2 bg-primary-darker text-secondary-lighter rounded;
-}
-
-.btn-full {
-  @apply w-full;
-}
-
-.sidebar {
-  @apply max-w-[15rem] w-full font-cairo whitespace-nowrap;
-  @apply min-h-screen px-4 bg-primary-dark text-secondary-lighter;
-}
-.sidebar-brand {
-  @apply mt-7 inline-block text-center w-full;
-}
-.sidebar .list {
-  @apply mt-7;
-}
-.sidebar .list-item-link {
-  @apply py-3 flex rounded;
-}
-.sidebar .list-item-link.active {
-  @apply relative bg-secondary-light text-primary-dark;
-}
-.sidebar .list-item-link.active::before {
-  content: "";
-  @apply absolute h-full bg-secondary-light rounded-l top-0 -right-5 w-2;
-}
-.sidebar .list-item-icon {
-  @apply w-5 mx-5;
-}
-
-.user-profile {
-  @apply mt-16 mx-9 shadow p-10 rounded-lg;
-  @apply flex flex-col justify-center lg:flex-row lg:justify-between gap-4;
-}
-.user-profile .upload-image {
-  @apply mx-auto flex-auto lg:mx-4 text-center max-w-[12rem] lg:order-2;
-}
-.user-profile .upload-image .avatar {
-  @apply border-8 border-secondary-light rounded;
-}
-.user-profile .upload-image .update-btn {
-  @apply p-2 bg-secondary-light rounded-lg transform -translate-y-6;
-}
-.user-profile .upload-image .update-btn svg {
-  @apply fill-primary-dark w-6 h-6;
-}
-.user-profile .profile-form {
-  @apply flex-1 order-1;
-}
-.user-profile .profile-form .address-selects {
-  @apply flex justify-between gap-5;
-}
-.user-profile .profile-form .address-selects select {
-  @apply flex-1;
-}
-
-.nav {
-  @apply mt-4 rounded-3xl shadow px-6 py-4 mx-9;
-  @apply flex justify-between items-center;
-}
-.nav .menu-icon {
-  @apply cursor-pointer;
-}
-.nav-end {
-  @apply flex justify-between;
-}
-.nav-avatar img {
-  @apply w-10 h-10 rounded-full inline-block mr-4;
-}
-.nav .notification {
-  @apply flex items-center;
-}
-.nav .notification-icon {
-  @apply w-5 h-5 relative;
-}
-.nav .notification-icon.active::before {
-  content: "";
-  @apply absolute top-0 left-3 w-2 h-2 bg-primary-base rounded-full;
-}
-
-/*# sourceMappingURL=input.css.map */

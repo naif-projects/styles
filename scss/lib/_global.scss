@@ -1,0 +1,71 @@
+body {
+  @apply font-cairo;
+}
+
+svg {
+  width: 100%;
+}
+
+.dashboard {
+  @apply flex justify-between overflow-x-hidden;
+
+  .sidebar {
+    @apply flex-1;
+  }
+
+  &-content {
+    @apply flex-1;
+    // width: 100%;
+  }
+}
+
+// modal
+.modal {
+  @apply w-screen h-screen bg-gray-800/40 fixed top-0 left-0 z-50;
+  @apply flex justify-center items-center px-6;
+
+  overscroll-behavior-y: contain;
+  overflow: auto;
+
+  &-container {
+    @apply bg-secondary-lighter text-primary-dark max-w-[35rem] w-full rounded;
+  }
+
+  .title {
+    @apply text-primary-darker;
+  }
+
+  &-header {
+    @apply py-3 p-6 flex justify-between items-center border-b border-primary-light;
+
+    .close-btn .icon {
+      @apply w-8 h-8;
+    }
+  }
+
+  &-content {
+    @apply py-4 px-6 min-h-[10rem] max-h-80 overflow-y-scroll;
+  }
+
+  h1 {
+    height: 400px;
+  }
+}
+
+::-webkit-scrollbar {
+  @apply w-1 h-1;
+}
+
+// ::-webkit-scrollbar-track {
+
+// }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-base rounded-3xl;
+}
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #a0aec0;
+// }
