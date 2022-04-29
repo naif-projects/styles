@@ -1,0 +1,12 @@
+.dashboard {
+  @apply flex justify-between overflow-x-hidden;
+
+  .sidebar {
+    @apply flex-1;
+  }
+
+  &-content {
+    @apply flex-1;
+    // width: 100%;
+  }
+}

@@ -1,0 +1,71 @@
+.pharmacy-profile {
+  @apply mt-16 mx-9 shadow p-10 rounded-lg;
+
+  .pharmacy-info {
+    @apply flex flex-col justify-center lg:flex-row lg:justify-between gap-4;
+  }
+
+  .profile-form {
+    @apply flex-1 order-1;
+
+    .address-selects {
+      @apply flex justify-between gap-5;
+
+      select {
+        @apply flex-1;
+      }
+    }
+  }
+
+  .upload-image {
+    @apply mx-auto flex-auto lg:mx-4 text-center max-w-[12rem] lg:order-2;
+
+    .avatar {
+      @apply border-8 border-secondary-light rounded;
+    }
+
+    .update-btn {
+      @apply p-2 bg-secondary-light rounded-lg transform -translate-y-6;
+
+      svg {
+        @apply fill-primary-dark w-6 h-6;
+      }
+    }
+  }
+
+  .contact-us {
+    &-header {
+      @apply flex items-center gap-4;
+    }
+
+    .item {
+      @apply flex justify-between items-center mt-4;
+
+      .item__column {
+        @apply flex gap-4 items-center;
+      }
+    }
+  }
+
+  .social {
+    @apply max-w-xl;
+
+    .item {
+      @apply flex items-center gap-4 mt-4 relative;
+
+      .icon {
+        @apply absolute top-1/2 right-4 transform -translate-y-1/2;
+        // transform: translate(-50%, -50%);
+      }
+
+      input {
+        @apply w-full pr-12;
+        direction: ltr;
+      }
+    }
+
+    .btn {
+      @apply mt-6;
+    }
+  }
+}
