@@ -9,9 +9,9 @@ const autoImportScss = ({ folder = 'scss' }) => {
   let files = [];
 
   const stringToScssPath = (path) => {
-    let file = `${path.slice(folder.length + 1)}`.replace('\\', '/');
+    let file = path.replace(/\\/g, '/');
 
-    if (file.includes('.scss')) return `@import '${folder}/${file}';`;
+    if (file.includes('.scss')) return `@import '${file}';`;
   };
 
   // watch folders
