@@ -15,14 +15,11 @@ const autoImportScss = ({ folder = 'scss' }) => {
   };
 
   // watch folders
-  watch(folder).on('all', (event, path) => {
+  watch(folder, {
+    ignored: folder + '/' + settings.ignore,
+    persistent: true,
+  }).on('all', (event, path) => {
     time = Date.now();
-
-    // console.log(
-    //   `${chalk.gray.bold('auto Import Scss ') + chalk.red('-->')} ${chalk.blue(
-    //     event
-    //   )}`
-    // );
 
     // on remove file
     if (event === 'unlink') {
@@ -40,6 +37,21 @@ const autoImportScss = ({ folder = 'scss' }) => {
   });
 
   const compileFile = ($files) => {
+    // check files
+    if (files.length === 0) {
+      console.clear();
+      console.log(
+        chalk.red('***************************************\n') +
+          chalk.red('*************************************** \n\n') +
+          chalk.red.bold('No scss files in your folders ') +
+          chalk.green('check ignore setting in setting.json or ') +
+          chalk.blue('or add new file') +
+          chalk.red('\n\n***************************************') +
+          chalk.red('\n***************************************')
+      );
+      return;
+    }
+
     // remove duplicated items
     $files = [...new Set($files)];
 
@@ -65,6 +77,19 @@ const autoImportScss = ({ folder = 'scss' }) => {
       }`
     );
   };
+
+  // log my files
+  setTimeout(() => {
+    let allFiles = files.map((file) => {
+      return file
+        .split(`@import '${settings.folder}/`)
+        .join('')
+        .replace(';', '')
+        .replace("'", '');
+    });
+
+    console.log(chalk.yellow('\n\n watch for these files ===>'), allFiles);
+  }, 1000);
 };
 
 /****** run script *****/

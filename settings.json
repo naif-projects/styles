@@ -1,5 +1,6 @@
 {
   "folder": "scss",
+  "ignore": "**/grid.scss",
   "output": {
     "scss": "main.scss",
     "css": "css/input.css"
