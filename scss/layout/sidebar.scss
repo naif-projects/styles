@@ -11,10 +11,15 @@
   }
 
   .list-item-link {
-    @apply py-3 flex rounded;
+    @apply py-3 flex rounded items-center;
 
     &.active {
       @apply relative bg-secondary-light text-primary-dark;
+
+      .icon svg,
+      .icon svg path {
+        @apply fill-primary-base;
+      }
     }
 
     &.active::before {
@@ -25,5 +30,14 @@
 
   .list-item-icon {
     @apply w-5 mx-5;
+  }
+
+  .icon {
+    @apply w-5 mx-5;
+
+    svg,
+    path {
+      @apply fill-secondary-lighter;
+    }
   }
 }

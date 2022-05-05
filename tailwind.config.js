@@ -1,6 +1,7 @@
 module.exports = {
   purge: ['./scss/index.scss', './scss/*/*.scss'],
   theme: {
+    container: false,
     extend: {
       colors: {
         'primary-lighter': '#96BBFF',

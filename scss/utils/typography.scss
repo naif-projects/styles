@@ -4,3 +4,11 @@
 .text-base {
   @apply text-primary-dark font-medium;
 }
+
+.text-large {
+  @apply text-primary-dark text-lg font-medium;
+}
+
+.text-danger {
+  @apply text-red-600 text-lg font-medium;
+}

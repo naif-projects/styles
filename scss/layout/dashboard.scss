@@ -6,7 +6,11 @@
   }
 
   &-content {
-    @apply flex-1;
+    @apply flex-1 pb-14;
     // width: 100%;
+  }
+
+  .section-header {
+    @apply flex justify-between items-center my-8;
   }
 }

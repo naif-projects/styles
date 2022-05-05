@@ -65,17 +65,21 @@ const autoImportScss = ({ folder = 'scss' }) => {
     writeFileSync(settings.output.scss, file, { encoding: 'utf-8' });
 
     /******* compile scss *********/
-    let css = sass.compile(settings.output.scss).css;
-    writeFileSync(settings.output.css, css, { encoding: 'utf-8' });
+    try {
+      let css = sass.compile(settings.output.scss).css;
+      writeFileSync(settings.output.css, css, { encoding: 'utf-8' });
 
-    console.log(
-      `${
-        chalk.blue(' compile ') +
-        chalk.red.bold('scss to css') +
-        chalk.red(' -----> ') +
-        chalk.green(`${Date.now() - time}ms`)
-      }`
-    );
+      console.log(
+        `${
+          chalk.blue(' compile ') +
+          chalk.red.bold('scss to css') +
+          chalk.red(' -----> ') +
+          chalk.green(`${Date.now() - time}ms`)
+        }`
+      );
+    } catch (error) {
+      console.log(chalk.red('\n\n\n error '), error.message);
+    }
   };
 
   // log my files

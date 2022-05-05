@@ -1,0 +1,45 @@
+.table {
+  @apply border shadow-primary-lighter shadow w-full rounded-lg;
+
+  &-wrapper {
+    @apply overflow-x-scroll w-full;
+
+    @media (max-width: 480px) {
+      max-width: 350px;
+    }
+
+    @media (max-width: 400px) {
+      max-width: 300px;
+    }
+  }
+
+  thead {
+    th {
+      @apply bg-white p-4;
+    }
+  }
+
+  tbody {
+    td {
+      @apply p-4 text-center whitespace-nowrap;
+    }
+
+    tr:nth-of-type(odd) td {
+      @apply bg-secondary-light;
+    }
+
+    td.table-action {
+      button:first-of-type {
+        @apply ml-3;
+      }
+    }
+
+    img {
+      max-width: 80px;
+    }
+
+    .btn {
+      @apply text-sm;
+    }
+  }
+}

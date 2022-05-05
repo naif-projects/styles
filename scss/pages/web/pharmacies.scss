@@ -1,0 +1,128 @@
+.pharmacies {
+  // @apply ;
+
+  &-bg {
+    min-height: 15rem;
+    background-image: url('data:image/svg+xml;base64,PCEtLSBSZXBsYWNlIHRoZSBjb250ZW50cyBvZiB0aGlzIGVkaXRvciB3aXRoIHlvdXIgU1ZHIGNvZGUgLS0+Cgo8c3ZnIHdpZHRoPSIxNDQwIiBoZWlnaHQ9IjI1OSIgdmlld0JveD0iMCAwIDE0NDAgMjU5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgICAgIDxyZWN0IHdpZHRoPSIxNDQwIiBoZWlnaHQ9IjI1OSIgZmlsbD0iIzk2QkJGRiIgLz4KICAgICAgICA8cGF0aCBkPSJNMTMxLjE2MyA3NVYxMDEuMTYzSDEwNVYxMjEuODM3SDEzMS4xNjNWMTQ4SDE1MS44MzdWMTIxLjgzN0gxNzhWMTAxLjE2M0gxNTEuODM3Vjc1SDEzMS4xNjNaIgogICAgICAgICAgZmlsbD0iI0Y3RjlGRSIgZmlsbC1vcGFjaXR5PSIwLjg3IiAvPgogICAgICA8L3N2Zz4=');
+  }
+
+  // header
+  &-header {
+    @apply flex flex-col md:flex-row md:justify-between md:items-center gap-4;
+    @apply p-4 rounded-lg border border-gray-300/80 bg-secondary-light;
+
+    // for bg
+    @apply transform -translate-y-12 -mb-8 md:-mb-6;
+
+    .header-select {
+      @apply flex justify-between items-center gap-2;
+      @apply md:w-3/5 flex-col md:flex-row;
+    }
+
+    .header-input {
+      @apply md:w-2/5;
+    }
+  }
+
+  /********* page content ***********/
+  .list {
+    @apply mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6;
+
+    .item-header {
+      @apply p-4 flex justify-start items-center gap-4 min-h-[9rem];
+      @apply bg-secondary-light rounded-t-lg shadow-md;
+
+      &:hover {
+        @apply bg-primary-dark;
+
+        & * {
+          @apply text-secondary-lighter;
+
+          .icon path {
+            @apply stroke-secondary-lighter fill-secondary-lighter;
+          }
+        }
+      }
+    }
+
+    .item-logo {
+      @apply rounded-lg border-4 border-secondary-dark h-20 w-20;
+    }
+
+    .item-title {
+      @apply text-primary-darker text-lg;
+      @apply break-all;
+    }
+
+    .item-address {
+      @apply text-primary-dark text-xs flex items-center gap-3;
+
+      .icon {
+        @apply w-3;
+      }
+    }
+
+    .item-link {
+      @apply rounded-t-none;
+    }
+  }
+
+  /********* modal ***********/
+  .pharmacy-info {
+    @apply flex items-center gap-2;
+
+    .pharmacy-sub-title {
+      @apply text-xs;
+    }
+
+    .pharmacy-title {
+      @apply text-lg text-primary-darker;
+    }
+  }
+
+  .image-file-upload {
+    @apply mt-4;
+
+    .file-upload {
+      @apply border border-dashed border-secondary-darker p-6;
+      @apply cursor-pointer;
+
+      .title {
+        @apply text-center mt-4;
+      }
+    }
+
+    .viewer-image {
+      @apply w-4/5 mx-auto;
+    }
+
+    form {
+      @apply space-y-6;
+
+      .form-title {
+        @apply text-primary-darker text-xl font-bold;
+      }
+
+      .form-description {
+        @apply text-xs text-primary-base;
+      }
+
+      input[type='file'] {
+        @apply hidden;
+      }
+
+      textarea {
+        @apply mt-4;
+      }
+
+      select,
+      input[type='text'] {
+        @apply mt-2;
+      }
+    }
+
+    .description {
+      @apply text-sm leading-5 mt-10;
+    }
+  }
+}

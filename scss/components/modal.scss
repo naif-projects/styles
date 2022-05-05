@@ -15,7 +15,7 @@
   }
 
   &-header {
-    @apply py-3 p-6 flex justify-between items-center border-b border-primary-light;
+    @apply py-3 p-6 flex justify-between items-center shadow shadow-gray-300;
 
     .close-btn .icon {
       @apply w-8 h-8;
@@ -23,10 +23,10 @@
   }
 
   &-content {
-    @apply py-4 px-6 min-h-[10rem] max-h-80 overflow-y-scroll;
+    @apply py-4 px-6 min-h-[10rem] max-h-96 overflow-y-scroll;
   }
 
-  h1 {
-    height: 400px;
+  &-footer {
+    @apply px-6 py-3 shadow shadow-primary-light;
   }
 }

@@ -1,0 +1,20 @@
+.badge {
+  @apply inline-block px-2 py-1 rounded text-center;
+  @apply text-sm font-bold  whitespace-nowrap align-baseline;
+
+  &-primary {
+    @apply bg-blue-500 text-blue-100;
+  }
+
+  &-info {
+    @apply bg-sky-500 text-sky-100;
+  }
+
+  &-success {
+    @apply bg-green-500 text-green-100;
+  }
+
+  &-danger {
+    @apply bg-red-500 text-red-100;
+  }
+}

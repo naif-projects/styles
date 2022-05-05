@@ -1,0 +1,16 @@
+.or {
+  @apply relative flex justify-center my-4;
+
+  &::before {
+    content: 'او';
+
+    @apply bg-white rounded-full w-10 h-10 relative z-20;
+    @apply flex justify-center items-center;
+  }
+
+  &::after {
+    content: '';
+    @apply absolute top-1/2 left-0 h-[1px] w-full transform z-10;
+    @apply bg-secondary-darker;
+  }
+}
