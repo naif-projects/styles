@@ -80,49 +80,5 @@
     }
   }
 
-  .image-file-upload {
-    @apply mt-4;
-
-    .file-upload {
-      @apply border border-dashed border-secondary-darker p-6;
-      @apply cursor-pointer;
-
-      .title {
-        @apply text-center mt-4;
-      }
-    }
-
-    .viewer-image {
-      @apply w-4/5 mx-auto;
-    }
-
-    form {
-      @apply space-y-6;
-
-      .form-title {
-        @apply text-primary-darker text-xl font-bold;
-      }
-
-      .form-description {
-        @apply text-xs text-primary-base;
-      }
-
-      input[type='file'] {
-        @apply hidden;
-      }
-
-      textarea {
-        @apply mt-4;
-      }
-
-      select,
-      input[type='text'] {
-        @apply mt-2;
-      }
-    }
-
-    .description {
-      @apply text-sm leading-5 mt-10;
-    }
-  }
+ 
 }

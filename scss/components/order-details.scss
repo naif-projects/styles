@@ -1,0 +1,65 @@
+.t-order-details {
+  @apply text-right flex flex-col gap-8;
+
+  .t-section-title {
+    @apply text-lg font-bold;
+  }
+
+  &-user {
+    @apply flex gap-4 items-center;
+
+    img {
+      @apply rounded-full w-16 h-16 object-cover;
+    }
+
+    .t-created-at {
+      @apply text-primary-light;
+    }
+  }
+
+  &-description {
+    .t-order-header {
+      @apply flex gap-2 items-center;
+    }
+
+    p {
+      @apply mt-4;
+    }
+
+    img.t-order-image {
+      @apply mt-2 mx-auto max-w-[12rem];
+      max-width: 200px;
+      margin: auto;
+    }
+  }
+
+  &-actions {
+    @apply flex gap-4 mt-4;
+
+    .btn {
+      @apply flex gap-2 items-center;
+    }
+  }
+}
+
+// client
+.t-order-details-status {
+  @apply w-full;
+
+  .t-status {
+    @apply bg-secondary-light text-primary-darker px-4 py-5 rounded-md flex gap-4 items-center;
+    @apply flex-wrap;
+
+    &-mark {
+      @apply text-primary-base text-xl font-bold;
+    }
+
+    &-heading {
+      @apply whitespace-normal;
+    }
+
+    &-pharmacy {
+      @apply text-primary-darker m-1 font-semibold text-lg underline underline-offset-4 decoration-wavy;
+    }
+  }
+}

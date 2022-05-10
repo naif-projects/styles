@@ -1,0 +1,44 @@
+.page-create-quotation {
+  @apply bg-secondary-lighter p-8 rounded-lg mt-8 w-11/12 mx-auto;
+
+  .t-form-group {
+    @apply flex flex-col;
+
+    label {
+      @apply mb-4 inline-block;
+    }
+  }
+
+  .t-order-item {
+    @apply flex flex-col lg:flex-row  gap-4 lg:gap-5;
+  }
+
+  .t-form-btn-action {
+    @apply w-[82%];
+  }
+
+  .t-btn-add-new {
+    @apply flex items-center mb-4 mt-8;
+
+    &::before {
+      content: '';
+      @apply w-full bg-primary-base h-[2px];
+    }
+  }
+
+  .t-btn-remove-item {
+    @apply flex items-end w-10;
+
+    .icon {
+      @apply w-6;
+    }
+  }
+
+  .t-form-btn {
+    @apply flex justify-center;
+  }
+
+  .divided {
+    @apply my-4;
+  }
+}

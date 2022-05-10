@@ -1,0 +1,9 @@
+.alert-box {
+  @apply p-4 fixed bottom-8 left-5 bg-primary-dark text-secondary-lighter;
+  @apply rounded-lg border border-gray-300 shadow text-white;
+  @apply inline-block;
+}
+
+.error {
+  @apply p-1 text-sm text-red-700;
+}

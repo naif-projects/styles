@@ -2,7 +2,14 @@
   @apply px-5 py-2 text-secondary-lighter rounded whitespace-nowrap;
   @apply transition-colors delay-100 hover:bg-primary-dark hover:text-secondary-light;
 
-  background: linear-gradient(201.54deg, #5d93ff 53.72%, #877eff 85.85%);
+  @apply bg-primary-dark;
+  // background: linear-gradient(201.54deg, #5d93ff 53.72%, #877eff 85.85%);
+}
+
+.btn-rounded {
+  @extend .btn;
+
+  @apply rounded-full px-8 py-1;
 }
 
 .btn-full {
@@ -15,10 +22,4 @@
 
 .btn-danger {
   @apply bg-red-600 text-secondary-lighter hover:bg-red-500;
-}
-
-.btn-rounded {
-  @extend .btn;
-
-  @apply rounded-full px-8 py-1;
 }

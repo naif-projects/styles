@@ -3,6 +3,16 @@
 @tailwind base;
 @tailwind variants;
 @tailwind components;
+.alert-box {
+  @apply p-4 fixed bottom-8 left-5 bg-primary-dark text-secondary-lighter;
+  @apply rounded-lg border border-gray-300 shadow text-white;
+  @apply inline-block;
+}
+
+.error {
+  @apply p-1 text-sm text-red-700;
+}
+
 .badge {
   @apply inline-block px-2 py-1 rounded text-center;
   @apply text-sm font-bold  whitespace-nowrap align-baseline;
@@ -23,7 +33,11 @@
 .btn, .btn-rounded {
   @apply px-5 py-2 text-secondary-lighter rounded whitespace-nowrap;
   @apply transition-colors delay-100 hover:bg-primary-dark hover:text-secondary-light;
-  background: linear-gradient(201.54deg, #5d93ff 53.72%, #877eff 85.85%);
+  @apply bg-primary-dark;
+}
+
+.btn-rounded {
+  @apply rounded-full px-8 py-1;
 }
 
 .btn-full {
@@ -38,8 +52,18 @@
   @apply bg-red-600 text-secondary-lighter hover:bg-red-500;
 }
 
-.btn-rounded {
-  @apply rounded-full px-8 py-1;
+.t-dropdown {
+  @apply relative;
+}
+.t-dropdown-item {
+  @apply absolute -bottom-9 left-1/2 transform -translate-x-1/2  bg-white;
+  @apply py-1 rounded border border-gray-300 text-sm whitespace-nowrap;
+}
+.t-dropdown-item button {
+  @apply px-4 py-1;
+}
+.t-dropdown-item button:hover {
+  @apply bg-primary-base transition-colors text-secondary-lighter;
 }
 
 .form-group {
@@ -94,29 +118,132 @@ textarea.form-control {
   @apply pl-14;
 }
 
-.modal {
+.image-file-upload {
+  @apply mt-4;
+}
+.image-file-upload .file-upload {
+  @apply border border-dashed border-secondary-darker p-6;
+  @apply cursor-pointer;
+}
+.image-file-upload .file-upload .title {
+  @apply text-center mt-4;
+}
+.image-file-upload .viewer-image {
+  @apply w-4/5 mx-auto max-w-[13rem];
+}
+.image-file-upload form {
+  @apply space-y-6;
+}
+.image-file-upload form .form-title {
+  @apply text-primary-darker text-xl font-bold;
+}
+.image-file-upload form .form-description {
+  @apply text-xs text-primary-base;
+}
+.image-file-upload form input[type=file] {
+  @apply hidden;
+}
+.image-file-upload form textarea {
+  @apply mt-4;
+}
+.image-file-upload form select,
+.image-file-upload form input[type=text] {
+  @apply mt-2;
+}
+.image-file-upload .description {
+  @apply text-sm leading-5 mt-10;
+}
+
+.t-modal {
   @apply w-screen h-screen bg-gray-800/40 fixed top-0 left-0 z-50;
-  @apply flex justify-center items-center px-6;
+  @apply hidden justify-center items-center px-6;
   overscroll-behavior-y: contain;
   overflow: auto;
 }
-.modal-container {
+.t-modal.open {
+  @apply flex;
+}
+.t-modal-container {
   @apply bg-secondary-lighter text-primary-dark max-w-[35rem] w-full rounded;
 }
-.modal .title {
+.t-modal .title {
   @apply text-primary-darker;
 }
-.modal-header {
+.t-modal-header {
   @apply py-3 p-6 flex justify-between items-center shadow shadow-gray-300;
 }
-.modal-header .close-btn .icon {
+.t-modal-header .close-btn .icon {
   @apply w-8 h-8;
 }
-.modal-content {
+.t-modal-content {
   @apply py-4 px-6 min-h-[10rem] max-h-96 overflow-y-scroll;
 }
-.modal-footer {
+.t-modal-footer {
   @apply px-6 py-3 shadow shadow-primary-light;
+}
+
+.or {
+  @apply relative flex justify-center my-4;
+}
+.or::before {
+  content: "او";
+  @apply bg-white rounded-full w-10 h-10 relative z-20;
+  @apply flex justify-center items-center;
+}
+.or::after {
+  content: "";
+  @apply absolute top-1/2 left-0 h-[1px] w-full transform z-10;
+  @apply bg-secondary-darker;
+}
+
+.t-order-details {
+  @apply text-right flex flex-col gap-8;
+}
+.t-order-details .t-section-title {
+  @apply text-lg font-bold;
+}
+.t-order-details-user {
+  @apply flex gap-4 items-center;
+}
+.t-order-details-user img {
+  @apply rounded-full w-16 h-16 object-cover;
+}
+.t-order-details-user .t-created-at {
+  @apply text-primary-light;
+}
+.t-order-details-description .t-order-header {
+  @apply flex gap-2 items-center;
+}
+.t-order-details-description p {
+  @apply mt-4;
+}
+.t-order-details-description img.t-order-image {
+  @apply mt-2 mx-auto max-w-[12rem];
+  max-width: 200px;
+  margin: auto;
+}
+.t-order-details-actions {
+  @apply flex gap-4 mt-4;
+}
+.t-order-details-actions .btn, .t-order-details-actions .btn-rounded {
+  @apply flex gap-2 items-center;
+}
+
+.t-order-details-status {
+  @apply w-full;
+}
+.t-order-details-status .t-status {
+  @apply bg-secondary-light text-primary-darker px-4 py-5 rounded-md flex gap-4 items-center;
+  @apply flex-wrap;
+}
+.t-order-details-status .t-status-mark {
+  @apply text-primary-base text-xl font-bold;
+}
+.t-order-details-status .t-status-heading {
+  @apply whitespace-normal;
+}
+.t-order-details-status .t-status-pharmacy {
+  @apply text-primary-darker m-1 font-semibold text-lg underline underline-offset-4 decoration-wavy;
 }
 
 .table {
@@ -224,6 +351,13 @@ textarea.form-control {
 .sidebar .icon svg,
 .sidebar .icon path {
   @apply fill-secondary-lighter;
+}
+
+.livewire-security {
+  @apply max-w-2xl;
+}
+.livewire-security h2 {
+  @apply mb-4;
 }
 
 body {
@@ -352,6 +486,81 @@ svg {
   @apply mt-6;
 }
 
+.page-quotation-details .t-address {
+  @apply m-6 flex gap-4 items-center;
+}
+.page-quotation-details .t-address select {
+  @apply px-8 inline-block;
+}
+.page-quotation-details .t-form {
+  @apply mt-4;
+}
+
+.page-pharmacy-orders .t-profile {
+  @apply rounded-full w-10 h-10 border-primary-light border;
+}
+
+.page-create-quotation {
+  @apply bg-secondary-lighter p-8 rounded-lg mt-8 w-11/12 mx-auto;
+}
+.page-create-quotation .t-form-group {
+  @apply flex flex-col;
+}
+.page-create-quotation .t-form-group label {
+  @apply mb-4 inline-block;
+}
+.page-create-quotation .t-order-item {
+  @apply flex flex-col lg:flex-row  gap-4 lg:gap-5;
+}
+.page-create-quotation .t-form-btn-action {
+  @apply w-[82%];
+}
+.page-create-quotation .t-btn-add-new {
+  @apply flex items-center mb-4 mt-8;
+}
+.page-create-quotation .t-btn-add-new::before {
+  content: "";
+  @apply w-full bg-primary-base h-[2px];
+}
+.page-create-quotation .t-btn-remove-item {
+  @apply flex items-end w-10;
+}
+.page-create-quotation .t-btn-remove-item .icon {
+  @apply w-6;
+}
+.page-create-quotation .t-form-btn {
+  @apply flex justify-center;
+}
+.page-create-quotation .divided {
+  @apply my-4;
+}
+
+.page-pharmacy-profile .t-bg {
+  @apply h-80 bg-secondary-darker;
+}
+.page-pharmacy-profile .t-content {
+  @apply max-w-2xl bg-secondary-lighter text-primary-darker;
+  @apply mx-auto transform -translate-y-40 p-8;
+}
+.page-pharmacy-profile .t-content .t-pharmacy-logo {
+  @apply text-center transform -translate-y-28 flex justify-center;
+}
+.page-pharmacy-profile .t-content .t-pharmacy-logo img {
+  @apply w-40 h-40 rounded border-8 border-primary-lighter;
+}
+.page-pharmacy-profile .t-content .t-about {
+  @apply text-center -mt-12;
+}
+.page-pharmacy-profile .t-content .t-header {
+  @apply text-3xl text-primary-darker font-extrabold;
+}
+.page-pharmacy-profile .t-content .t-address {
+  @apply flex items-center gap-2 justify-center mt-4;
+}
+.page-pharmacy-profile .t-content .t-social {
+  @apply flex gap-4;
+}
+
 .pharmacies {
   /********* page content ***********/
   /********* modal ***********/
@@ -412,53 +621,4 @@ svg {
 }
 .pharmacies .pharmacy-info .pharmacy-title {
   @apply text-lg text-primary-darker;
-}
-.pharmacies .image-file-upload {
-  @apply mt-4;
-}
-.pharmacies .image-file-upload .file-upload {
-  @apply border border-dashed border-secondary-darker p-6;
-  @apply cursor-pointer;
-}
-.pharmacies .image-file-upload .file-upload .title {
-  @apply text-center mt-4;
-}
-.pharmacies .image-file-upload .viewer-image {
-  @apply w-4/5 mx-auto;
-}
-.pharmacies .image-file-upload form {
-  @apply space-y-6;
-}
-.pharmacies .image-file-upload form .form-title {
-  @apply text-primary-darker text-xl font-bold;
-}
-.pharmacies .image-file-upload form .form-description {
-  @apply text-xs text-primary-base;
-}
-.pharmacies .image-file-upload form input[type=file] {
-  @apply hidden;
-}
-.pharmacies .image-file-upload form textarea {
-  @apply mt-4;
-}
-.pharmacies .image-file-upload form select,
-.pharmacies .image-file-upload form input[type=text] {
-  @apply mt-2;
-}
-.pharmacies .image-file-upload .description {
-  @apply text-sm leading-5 mt-10;
-}
-
-.or {
-  @apply relative flex justify-center my-4;
-}
-.or::before {
-  content: "او";
-  @apply bg-white rounded-full w-10 h-10 relative z-20;
-  @apply flex justify-center items-center;
-}
-.or::after {
-  content: "";
-  @apply absolute top-1/2 left-0 h-[1px] w-full transform z-10;
-  @apply bg-secondary-darker;
 }
