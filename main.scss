@@ -6,6 +6,7 @@
 @import 'scss/components/form.scss'; 
 @import 'scss/components/image.scss'; 
 @import 'scss/components/modal.scss'; 
+@import 'scss/components/notification.scss'; 
 @import 'scss/components/or.scss'; 
 @import 'scss/components/order-details.scss'; 
 @import 'scss/components/quotation-form.scss'; 
@@ -14,12 +15,15 @@
 @import 'scss/layout/navbar.scss'; 
 @import 'scss/layout/sidebar.scss'; 
 @import 'scss/livewire/security.scss'; 
+@import 'scss/utils/animation.scss'; 
 @import 'scss/utils/global.scss'; 
 @import 'scss/utils/typography.scss'; 
+@import 'scss/pages/invoice-profile.scss'; 
 @import 'scss/pages/admin/ads.scss'; 
 @import 'scss/pages/admin/manage-website.scss'; 
 @import 'scss/pages/admin/pharmacy-profile.scss'; 
 @import 'scss/pages/admin/users.scss'; 
+@import 'scss/pages/clients/invoice.scss'; 
 @import 'scss/pages/clients/page-quotation-details.scss'; 
 @import 'scss/pages/pharmacies/orders.scss'; 
 @import 'scss/pages/pharmacies/page-create-quotation.scss'; 

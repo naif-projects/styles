@@ -1,6 +1,6 @@
 .sidebar {
   @apply max-w-[15rem] w-full font-cairo whitespace-nowrap;
-  @apply min-h-screen px-4 bg-primary-dark text-secondary-lighter;
+  @apply min-h-screen px-4 bg-primary-darker text-secondary-lighter;
 
   &-brand {
     @apply mt-7 inline-block text-center w-full;

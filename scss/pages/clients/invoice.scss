@@ -1,0 +1,98 @@
+.page-invoice {
+  @apply mt-8 text-gray-800 container;
+
+  .divided {
+    @apply border-gray-200 my-5;
+  }
+
+  .t-header {
+    .t-title {
+      @apply text-4xl;
+    }
+
+    .t-invoice-info {
+      @apply mt-6 flex gap-8;
+    }
+
+    .t-item {
+      &-key {
+        @apply text-gray-400;
+      }
+
+      &-value {
+        @apply text-gray-700;
+      }
+    }
+  }
+
+  // invoice desc
+  .t-invoice-desc {
+    @apply mt-8 flex gap-40;
+
+    .t-item {
+      @apply space-y-3;
+
+      * {
+        @apply flex gap-4 items-center;
+
+        .icon {
+          @apply w-4;
+        }
+      }
+
+      .t-title {
+        @apply text-gray-500;
+      }
+
+      .t-name {
+        @apply text-xl font-semibold;
+      }
+    }
+  }
+
+  // invoice total
+  .t-total {
+    @apply px-8 space-y-2;
+
+    .t-item {
+      @apply max-w-[20rem];
+      @apply flex justify-between items-center;
+    }
+
+    .t-key {
+      @apply text-gray-500;
+    }
+
+    .t-price {
+      @apply text-primary-dark font-semibold text-xl;
+    }
+  }
+}
+
+// invoice table
+.page-invoice {
+  table {
+    @apply mt-8;
+    @apply border shadow-gray-100 shadow w-full rounded-lg;
+
+    thead {
+      th {
+        @apply bg-white p-4;
+      }
+    }
+
+    tbody {
+      td {
+        @apply p-4 text-center whitespace-nowrap;
+      }
+
+      tr:nth-of-type(odd) td {
+        @apply bg-gray-100;
+      }
+
+      img {
+        max-width: 80px;
+      }
+    }
+  }
+}

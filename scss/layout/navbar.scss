@@ -15,17 +15,4 @@
       @apply w-10 h-10 rounded-full inline-block mr-4;
     }
   }
-
-  .notification {
-    @apply flex items-center;
-  }
-
-  .notification-icon {
-    @apply w-5 h-5 relative;
-
-    &.active::before {
-      content: '';
-      @apply absolute top-0 left-3 w-2 h-2 bg-primary-base rounded-full;
-    }
-  }
 }

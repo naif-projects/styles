@@ -9,7 +9,6 @@ module.exports = {
         'primary-base': '#588FF4',
         'primary-dark': '#4E7DCB',
         'primary-darker': '#3869BA',
-
         'secondary-lighter': '#F7F9FE',
         'secondary-light': '#DDE9FF',
         'secondary-base': '#C5D9FE',

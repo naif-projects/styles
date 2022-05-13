@@ -33,4 +33,22 @@
   &-footer {
     @apply px-6 py-3 shadow shadow-primary-light;
   }
+
+  .t-description {
+    @apply whitespace-normal mb-8;
+  }
+
+  .t-zoom-img {
+    @apply hidden;
+    @apply fixed w-full h-full bg-gray-900/30 z-50 top-0 left-0 transition-all delay-200;
+
+    img {
+      @apply fixed top-1/2 left-1/2 transition-transform delay-200;
+      transform: translate(-50%, -50%) scale(2);
+      cursor: auto;
+    }
+  }
+  .zoom-full.t-zoom-img {
+    @apply block;
+  }
 }

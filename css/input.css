@@ -181,6 +181,55 @@ textarea.form-control {
 .t-modal-footer {
   @apply px-6 py-3 shadow shadow-primary-light;
 }
+.t-modal .t-description {
+  @apply whitespace-normal mb-8;
+}
+.t-modal .t-zoom-img {
+  @apply hidden;
+  @apply fixed w-full h-full bg-gray-900/30 z-50 top-0 left-0 transition-all delay-200;
+}
+.t-modal .t-zoom-img img {
+  @apply fixed top-1/2 left-1/2 transition-transform delay-200;
+  transform: translate(-50%, -50%) scale(2);
+  cursor: auto;
+}
+.t-modal .zoom-full.t-zoom-img {
+  @apply block;
+}
+
+.t-notification {
+  @apply flex items-center relative;
+}
+.t-notification .t-notification-icon {
+  @apply w-5 h-5 relative;
+}
+.t-notification .t-notification-icon.active::before {
+  content: "";
+  @apply absolute top-0 left-3 w-2 h-2 bg-primary-base rounded-full;
+}
+.t-notification-content {
+  @apply hidden bg-gray-50  absolute top-0 left-0  min-w-[10rem];
+  @apply rounded;
+  transform: translate(0px, 40px);
+}
+.t-notification-content .t-item {
+  @apply px-6 py-2 border-b border-gray-200;
+}
+.t-notification-content .t-header {
+  @apply flex gap-4 items-center;
+}
+.t-notification-content .t-name {
+  @apply text-lg;
+}
+.t-notification-content .t-avatar {
+  @apply max-w-[20px] rounded-full;
+}
+.t-notification-content .t-desc {
+  @apply mt-2 whitespace-normal;
+}
+.t-notification .is-open {
+  @apply block;
+}
 
 .or {
   @apply relative flex justify-center my-4;
@@ -307,20 +356,10 @@ textarea.form-control {
 .nav-avatar img {
   @apply w-10 h-10 rounded-full inline-block mr-4;
 }
-.nav .notification {
-  @apply flex items-center;
-}
-.nav .notification-icon {
-  @apply w-5 h-5 relative;
-}
-.nav .notification-icon.active::before {
-  content: "";
-  @apply absolute top-0 left-3 w-2 h-2 bg-primary-base rounded-full;
-}
 
 .sidebar {
   @apply max-w-[15rem] w-full font-cairo whitespace-nowrap;
-  @apply min-h-screen px-4 bg-primary-dark text-secondary-lighter;
+  @apply min-h-screen px-4 bg-primary-darker text-secondary-lighter;
 }
 .sidebar-brand {
   @apply mt-7 inline-block text-center w-full;
@@ -360,12 +399,109 @@ textarea.form-control {
   @apply mb-4;
 }
 
+:root {
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+}
+
+.animate__animated {
+  animation-duration: var(--animate-duration);
+  animation-fill-mode: both;
+}
+
+.animate__animated.animate__infinite {
+  animation-iteration-count: infinite;
+}
+
+.animate__animated.animate__repeat-1 {
+  animation-iteration-count: var(--animate-repeat);
+}
+
+.animate__animated.animate__repeat-2 {
+  animation-iteration-count: calc(var(--animate-repeat) * 2);
+}
+
+.animate__animated.animate__repeat-3 {
+  animation-iteration-count: calc(var(--animate-repeat) * 3);
+}
+
+.animate__animated.animate__delay-1s {
+  animation-delay: var(--animate-delay);
+}
+
+.animate__animated.animate__delay-2s {
+  animation-delay: calc(var(--animate-delay) * 2);
+}
+
+.animate__animated.animate__delay-3s {
+  animation-delay: calc(var(--animate-delay) * 3);
+}
+
+.animate__animated.animate__delay-4s {
+  animation-delay: calc(var(--animate-delay) * 4);
+}
+
+.animate__animated.animate__delay-5s {
+  animation-delay: calc(var(--animate-delay) * 5);
+}
+
+.animate__animated.animate__faster {
+  animation-duration: calc(var(--animate-duration) / 2);
+}
+
+.animate__animated.animate__fast {
+  animation-duration: calc(var(--animate-duration) * 0.8);
+}
+
+.animate__animated.animate__slow {
+  animation-duration: calc(var(--animate-duration) * 2);
+}
+
+.animate__animated.animate__slower {
+  animation-duration: calc(var(--animate-duration) * 3);
+}
+
+.animate__bounce {
+  animation-name: bounce;
+  transform-origin: center bottom;
+}
+
+@keyframes bounce {
+  from, 20%, 53%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -30px, 0) scaleY(1.1);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0) scaleY(1.05);
+  }
+  80% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0) scaleY(0.95);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0) scaleY(1.02);
+  }
+}
 body {
   @apply font-cairo;
 }
 
 svg {
   width: 100%;
+}
+
+ion-icon {
+  @apply text-xl;
+}
+
+.icon {
+  @apply flex items-center;
 }
 
 ::-webkit-scrollbar {
@@ -429,6 +565,63 @@ svg {
   @apply text-red-600 text-lg font-medium;
 }
 
+.page-invoice-profile {
+  @apply mt-8;
+}
+.page-invoice-profile .t-bg {
+  @apply min-h-[20rem] bg-primary-light rounded-lg;
+}
+.page-invoice-profile .t-header {
+  @apply px-12 transform -translate-y-14 flex gap-10 items-end;
+}
+.page-invoice-profile .t-header .t-avatar {
+  @apply w-36 ring-8 ring-white rounded bg-gray-50;
+}
+.page-invoice-profile .t-header .t-user-name {
+  @apply flex items-center gap-3;
+}
+.page-invoice-profile .t-header .t-user-desc {
+  @apply mt-4 flex gap-14;
+}
+.page-invoice-profile .t-header .t-user-desc .t-item {
+  @apply flex gap-3 items-center;
+}
+
+.page-invoice-profile .t-content {
+  @apply mt-8;
+}
+.page-invoice-profile .t-content header {
+  @apply flex gap-3 items-center;
+}
+.page-invoice-profile .t-content header .t-heading {
+  @apply text-2xl font-semibold;
+}
+.page-invoice-profile .t-content .t-log-data {
+  @apply ring-1 ring-gray-200 p-8 rounded-lg;
+}
+.page-invoice-profile .t-content .t-list {
+  @apply mt-8 border-r border-gray-300 space-y-12;
+}
+.page-invoice-profile .t-content .t-item {
+  @apply pr-16  relative;
+}
+.page-invoice-profile .t-content .t-item-header {
+  @apply flex justify-between;
+}
+.page-invoice-profile .t-content .t-item-header h4 {
+  @apply text-lg font-semibold flex  items-center;
+}
+.page-invoice-profile .t-content .t-item-header h4::before {
+  @apply w-6 h-6 rounded-full bg-red-500  absolute top-0 -right-3;
+  content: "";
+}
+.page-invoice-profile .t-content .t-item-header .t-date {
+  @apply text-gray-500;
+}
+.page-invoice-profile .t-content .t-item .t-desc {
+  @apply mt-8 max-h-[100px] overflow-hidden;
+}
+
 .manage-website .section {
   @apply max-w-3xl shadow-lg p-8 mt-10;
 }
@@ -484,6 +677,73 @@ svg {
 }
 .pharmacy-profile .social .btn, .pharmacy-profile .social .btn-rounded {
   @apply mt-6;
+}
+
+.page-invoice {
+  @apply mt-8 text-gray-800 container;
+}
+.page-invoice .divided {
+  @apply border-gray-200 my-5;
+}
+.page-invoice .t-header .t-title {
+  @apply text-4xl;
+}
+.page-invoice .t-header .t-invoice-info {
+  @apply mt-6 flex gap-8;
+}
+.page-invoice .t-header .t-item-key {
+  @apply text-gray-400;
+}
+.page-invoice .t-header .t-item-value {
+  @apply text-gray-700;
+}
+.page-invoice .t-invoice-desc {
+  @apply mt-8 flex gap-40;
+}
+.page-invoice .t-invoice-desc .t-item {
+  @apply space-y-3;
+}
+.page-invoice .t-invoice-desc .t-item * {
+  @apply flex gap-4 items-center;
+}
+.page-invoice .t-invoice-desc .t-item * .icon {
+  @apply w-4;
+}
+.page-invoice .t-invoice-desc .t-item .t-title {
+  @apply text-gray-500;
+}
+.page-invoice .t-invoice-desc .t-item .t-name {
+  @apply text-xl font-semibold;
+}
+.page-invoice .t-total {
+  @apply px-8 space-y-2;
+}
+.page-invoice .t-total .t-item {
+  @apply max-w-[20rem];
+  @apply flex justify-between items-center;
+}
+.page-invoice .t-total .t-key {
+  @apply text-gray-500;
+}
+.page-invoice .t-total .t-price {
+  @apply text-primary-dark font-semibold text-xl;
+}
+
+.page-invoice table {
+  @apply mt-8;
+  @apply border shadow-gray-100 shadow w-full rounded-lg;
+}
+.page-invoice table thead th {
+  @apply bg-white p-4;
+}
+.page-invoice table tbody td {
+  @apply p-4 text-center whitespace-nowrap;
+}
+.page-invoice table tbody tr:nth-of-type(odd) td {
+  @apply bg-gray-100;
+}
+.page-invoice table tbody img {
+  max-width: 80px;
 }
 
 .page-quotation-details .t-address {
