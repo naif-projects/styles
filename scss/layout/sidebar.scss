@@ -33,7 +33,11 @@
   }
 
   .icon {
-    @apply w-5 mx-5;
+    @apply w-6 mx-6;
+
+    ion-icon {
+      @apply text-2xl;
+    }
 
     svg,
     path {

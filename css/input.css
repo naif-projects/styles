@@ -140,14 +140,14 @@ textarea.form-control {
 .image-file-upload form .form-description {
   @apply text-xs text-primary-base;
 }
-.image-file-upload form input[type=file] {
+.image-file-upload input[type=file] {
   @apply hidden;
 }
-.image-file-upload form textarea {
+.image-file-upload textarea {
   @apply mt-4;
 }
-.image-file-upload form select,
-.image-file-upload form input[type=text] {
+.image-file-upload select,
+.image-file-upload input[type=text] {
   @apply mt-2;
 }
 .image-file-upload .description {
@@ -200,20 +200,21 @@ textarea.form-control {
 .t-notification {
   @apply flex items-center relative;
 }
+.t-notification-counter {
+  @apply absolute -top-2 left-3 rounded-full w-5 h-5 bg-primary-base px-1 text-sm;
+  @apply text-white;
+  @apply flex justify-center items-center;
+}
 .t-notification .t-notification-icon {
   @apply w-5 h-5 relative;
 }
-.t-notification .t-notification-icon.active::before {
-  content: "";
-  @apply absolute top-0 left-3 w-2 h-2 bg-primary-base rounded-full;
-}
 .t-notification-content {
-  @apply hidden bg-gray-50  absolute top-0 left-0  min-w-[10rem];
+  @apply hidden bg-secondary-lighter  absolute top-0 left-0  min-w-[10rem];
   @apply rounded;
   transform: translate(0px, 40px);
 }
 .t-notification-content .t-item {
-  @apply px-6 py-2 border-b border-gray-200;
+  @apply px-6 py-2 border-b border-secondary-light;
 }
 .t-notification-content .t-header {
   @apply flex gap-4 items-center;
@@ -385,7 +386,10 @@ textarea.form-control {
   @apply w-5 mx-5;
 }
 .sidebar .icon {
-  @apply w-5 mx-5;
+  @apply w-6 mx-6;
+}
+.sidebar .icon ion-icon {
+  @apply text-2xl;
 }
 .sidebar .icon svg,
 .sidebar .icon path {
@@ -397,6 +401,63 @@ textarea.form-control {
 }
 .livewire-security h2 {
   @apply mb-4;
+}
+
+.page-invoice-profile {
+  @apply mt-8;
+}
+.page-invoice-profile .t-bg {
+  @apply min-h-[20rem] bg-primary-light rounded-lg;
+}
+.page-invoice-profile .t-header {
+  @apply px-12 transform -translate-y-14 flex gap-10 items-end;
+}
+.page-invoice-profile .t-header .t-avatar {
+  @apply w-36 ring-8 ring-white rounded bg-gray-50;
+}
+.page-invoice-profile .t-header .t-user-name {
+  @apply flex items-center gap-3;
+}
+.page-invoice-profile .t-header .t-user-desc {
+  @apply mt-4 flex gap-14;
+}
+.page-invoice-profile .t-header .t-user-desc .t-item {
+  @apply flex gap-3 items-center;
+}
+
+.page-invoice-profile .t-content {
+  @apply mt-8;
+}
+.page-invoice-profile .t-content header {
+  @apply flex gap-3 items-center;
+}
+.page-invoice-profile .t-content header .t-heading {
+  @apply text-2xl font-semibold;
+}
+.page-invoice-profile .t-content .t-log-data {
+  @apply ring-1 ring-gray-200 p-8 rounded-lg;
+}
+.page-invoice-profile .t-content .t-list {
+  @apply mt-8 border-r border-gray-300 space-y-12;
+}
+.page-invoice-profile .t-content .t-item {
+  @apply pr-16  relative;
+}
+.page-invoice-profile .t-content .t-item-header {
+  @apply flex justify-between;
+}
+.page-invoice-profile .t-content .t-item-header h4 {
+  @apply text-lg font-semibold flex  items-center;
+}
+.page-invoice-profile .t-content .t-item-header h4::before {
+  @apply w-6 h-6 rounded-full bg-red-500  absolute top-0 -right-3;
+  content: "";
+}
+.page-invoice-profile .t-content .t-item-header .t-date {
+  @apply text-gray-500;
+}
+.page-invoice-profile .t-content .t-item .t-desc {
+  @apply mt-8 max-h-[100px] overflow-hidden;
 }
 
 :root {
@@ -565,61 +626,14 @@ ion-icon {
   @apply text-red-600 text-lg font-medium;
 }
 
-.page-invoice-profile {
-  @apply mt-8;
+.page-ads form.t-edit-ads {
+  @apply text-center;
 }
-.page-invoice-profile .t-bg {
-  @apply min-h-[20rem] bg-primary-light rounded-lg;
+.page-ads form.t-delete-ads {
+  @apply text-center;
 }
-.page-invoice-profile .t-header {
-  @apply px-12 transform -translate-y-14 flex gap-10 items-end;
-}
-.page-invoice-profile .t-header .t-avatar {
-  @apply w-36 ring-8 ring-white rounded bg-gray-50;
-}
-.page-invoice-profile .t-header .t-user-name {
-  @apply flex items-center gap-3;
-}
-.page-invoice-profile .t-header .t-user-desc {
-  @apply mt-4 flex gap-14;
-}
-.page-invoice-profile .t-header .t-user-desc .t-item {
-  @apply flex gap-3 items-center;
-}
-
-.page-invoice-profile .t-content {
-  @apply mt-8;
-}
-.page-invoice-profile .t-content header {
-  @apply flex gap-3 items-center;
-}
-.page-invoice-profile .t-content header .t-heading {
-  @apply text-2xl font-semibold;
-}
-.page-invoice-profile .t-content .t-log-data {
-  @apply ring-1 ring-gray-200 p-8 rounded-lg;
-}
-.page-invoice-profile .t-content .t-list {
-  @apply mt-8 border-r border-gray-300 space-y-12;
-}
-.page-invoice-profile .t-content .t-item {
-  @apply pr-16  relative;
-}
-.page-invoice-profile .t-content .t-item-header {
-  @apply flex justify-between;
-}
-.page-invoice-profile .t-content .t-item-header h4 {
-  @apply text-lg font-semibold flex  items-center;
-}
-.page-invoice-profile .t-content .t-item-header h4::before {
-  @apply w-6 h-6 rounded-full bg-red-500  absolute top-0 -right-3;
-  content: "";
-}
-.page-invoice-profile .t-content .t-item-header .t-date {
-  @apply text-gray-500;
-}
-.page-invoice-profile .t-content .t-item .t-desc {
-  @apply mt-8 max-h-[100px] overflow-hidden;
+.page-ads form.t-delete-ads img {
+  @apply text-center inline-block mt-8;
 }
 
 .manage-website .section {

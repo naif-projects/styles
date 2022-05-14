@@ -1,1 +1,13 @@
+.page-ads {
+  form.t-edit-ads {
+    @apply text-center;
+  }
 
+  form.t-delete-ads {
+    @apply text-center;
+
+    img {
+      @apply text-center inline-block mt-8;
+    }
+  }
+}

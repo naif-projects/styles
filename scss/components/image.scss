@@ -24,19 +24,19 @@
     .form-description {
       @apply text-xs text-primary-base;
     }
+  }
 
-    input[type='file'] {
-      @apply hidden;
-    }
+  input[type='file'] {
+    @apply hidden;
+  }
 
-    textarea {
-      @apply mt-4;
-    }
+  textarea {
+    @apply mt-4;
+  }
 
-    select,
-    input[type='text'] {
-      @apply mt-2;
-    }
+  select,
+  input[type='text'] {
+    @apply mt-2;
   }
 
   .description {
