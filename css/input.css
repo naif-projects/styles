@@ -37,7 +37,7 @@ body {
   @apply cursor-pointer;
 }
 .nav-end {
-  @apply flex justify-between;
+  @apply flex justify-between items-center;
 }
 .nav-avatar img {
   @apply w-10 h-10 rounded-full inline-block mr-4;
@@ -994,4 +994,14 @@ ion-icon {
 }
 .pharmacies .pharmacy-info .pharmacy-title {
   @apply text-lg text-primary-darker;
+}
+
+.wallet {
+  @apply ml-5;
+}
+.wallet-box {
+  @apply flex justify-center items-center gap-2 rounded-md bg-secondary-light border border-secondary-dark px-5 py-1;
+}
+.wallet-box span {
+  @apply text-primary-dark;
 }
