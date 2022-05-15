@@ -1,0 +1,11 @@
+.wallet{
+  @apply ml-5;
+
+  &-box{
+    @apply flex justify-center items-center gap-2 rounded-md bg-secondary-light border border-secondary-dark px-5 py-1;
+
+    span{
+      @apply text-primary-dark;
+    }
+  }
+}

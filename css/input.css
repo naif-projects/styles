@@ -3,16 +3,6 @@
 @tailwind base;
 @tailwind variants;
 @tailwind components;
-.alert-box {
-  @apply p-4 px-16 fixed bottom-8 left-5 bg-green-500 text-secondary-lighter;
-  @apply rounded-lg border border-green-300 shadow text-white;
-  @apply inline-block;
-}
-
-.error {
-  @apply p-1 text-sm text-red-700;
-}
-
 .badge {
   @apply inline-block px-2 py-1 rounded text-center;
   @apply text-sm font-bold  whitespace-nowrap align-baseline;
@@ -331,19 +321,6 @@ textarea.form-control {
   @apply text-sm;
 }
 
-.dashboard {
-  @apply flex justify-between overflow-x-hidden;
-}
-.dashboard .sidebar {
-  @apply flex-1;
-}
-.dashboard-content {
-  @apply flex-1 pb-14;
-}
-.dashboard .section-header {
-  @apply flex justify-between items-center my-8;
-}
-
 .nav {
   @apply shadow px-10 py-4 pl-20;
   @apply flex justify-between items-center bg-white;
@@ -352,7 +329,7 @@ textarea.form-control {
   @apply cursor-pointer;
 }
 .nav-end {
-  @apply flex justify-between;
+  @apply flex justify-between items-center;
 }
 .nav-avatar img {
   @apply w-10 h-10 rounded-full inline-block mr-4;
@@ -405,63 +382,6 @@ textarea.form-control {
 
 .naif {
   @apply px-8 bg-red-200;
-}
-
-.page-invoice-profile {
-  @apply mt-8;
-}
-.page-invoice-profile .t-bg {
-  @apply min-h-[20rem] bg-primary-light rounded-lg;
-}
-.page-invoice-profile .t-header {
-  @apply px-12 transform -translate-y-14 flex gap-10 items-end;
-}
-.page-invoice-profile .t-header .t-avatar {
-  @apply w-36 ring-8 ring-white rounded bg-gray-50;
-}
-.page-invoice-profile .t-header .t-user-name {
-  @apply flex items-center gap-3;
-}
-.page-invoice-profile .t-header .t-user-desc {
-  @apply mt-4 flex gap-14;
-}
-.page-invoice-profile .t-header .t-user-desc .t-item {
-  @apply flex gap-3 items-center;
-}
-
-.page-invoice-profile .t-content {
-  @apply mt-8;
-}
-.page-invoice-profile .t-content header {
-  @apply flex gap-3 items-center;
-}
-.page-invoice-profile .t-content header .t-heading {
-  @apply text-2xl font-semibold;
-}
-.page-invoice-profile .t-content .t-log-data {
-  @apply ring-1 ring-gray-200 p-8 rounded-lg;
-}
-.page-invoice-profile .t-content .t-list {
-  @apply mt-8 border-r border-gray-300 space-y-12;
-}
-.page-invoice-profile .t-content .t-item {
-  @apply pr-16  relative;
-}
-.page-invoice-profile .t-content .t-item-header {
-  @apply flex justify-between;
-}
-.page-invoice-profile .t-content .t-item-header h4 {
-  @apply text-lg font-semibold flex  items-center;
-}
-.page-invoice-profile .t-content .t-item-header h4::before {
-  @apply w-6 h-6 rounded-full bg-red-500  absolute top-0 -right-3;
-  content: "";
-}
-.page-invoice-profile .t-content .t-item-header .t-date {
-  @apply text-gray-500;
-}
-.page-invoice-profile .t-content .t-item .t-desc {
-  @apply mt-8 max-h-[100px] overflow-hidden;
 }
 
 :root {
@@ -896,4 +816,94 @@ ion-icon {
 }
 .pharmacies .pharmacy-info .pharmacy-title {
   @apply text-lg text-primary-darker;
+}
+
+.alert-box {
+  @apply p-4 px-16 fixed bottom-8 left-5 bg-green-500 text-secondary-lighter;
+  @apply rounded-lg border border-green-300 shadow text-white;
+  @apply inline-block;
+}
+
+.error {
+  @apply p-1 text-sm text-red-700;
+}
+
+.dashboard {
+  @apply flex justify-between overflow-x-hidden;
+}
+.dashboard .sidebar {
+  @apply flex-1;
+}
+.dashboard-content {
+  @apply flex-1 pb-14;
+}
+.dashboard .section-header {
+  @apply flex justify-between items-center my-8;
+}
+
+.page-invoice-profile {
+  @apply mt-8;
+}
+.page-invoice-profile .t-bg {
+  @apply min-h-[20rem] bg-primary-light rounded-lg;
+}
+.page-invoice-profile .t-header {
+  @apply px-12 transform -translate-y-14 flex gap-10 items-end;
+}
+.page-invoice-profile .t-header .t-avatar {
+  @apply w-36 ring-8 ring-white rounded bg-gray-50;
+}
+.page-invoice-profile .t-header .t-user-name {
+  @apply flex items-center gap-3;
+}
+.page-invoice-profile .t-header .t-user-desc {
+  @apply mt-4 flex gap-14;
+}
+.page-invoice-profile .t-header .t-user-desc .t-item {
+  @apply flex gap-3 items-center;
+}
+
+.page-invoice-profile .t-content {
+  @apply mt-8;
+}
+.page-invoice-profile .t-content header {
+  @apply flex gap-3 items-center;
+}
+.page-invoice-profile .t-content header .t-heading {
+  @apply text-2xl font-semibold;
+}
+.page-invoice-profile .t-content .t-log-data {
+  @apply ring-1 ring-gray-200 p-8 rounded-lg;
+}
+.page-invoice-profile .t-content .t-list {
+  @apply mt-8 border-r border-gray-300 space-y-12;
+}
+.page-invoice-profile .t-content .t-item {
+  @apply pr-16  relative;
+}
+.page-invoice-profile .t-content .t-item-header {
+  @apply flex justify-between;
+}
+.page-invoice-profile .t-content .t-item-header h4 {
+  @apply text-lg font-semibold flex  items-center;
+}
+.page-invoice-profile .t-content .t-item-header h4::before {
+  @apply w-6 h-6 rounded-full bg-red-500  absolute top-0 -right-3;
+  content: "";
+}
+.page-invoice-profile .t-content .t-item-header .t-date {
+  @apply text-gray-500;
+}
+.page-invoice-profile .t-content .t-item .t-desc {
+  @apply mt-8 max-h-[100px] overflow-hidden;
+}
+
+.wallet {
+  @apply ml-5;
+}
+.wallet-box {
+  @apply flex justify-center items-center gap-2 rounded-md bg-secondary-light border border-secondary-dark px-5 py-1;
+}
+.wallet-box span {
+  @apply text-primary-dark;
 }
