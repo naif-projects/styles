@@ -4,8 +4,8 @@
 @tailwind variants;
 @tailwind components;
 .alert-box {
-  @apply p-4 fixed bottom-8 left-5 bg-primary-dark text-secondary-lighter;
-  @apply rounded-lg border border-gray-300 shadow text-white;
+  @apply p-4 px-16 fixed bottom-8 left-5 bg-green-500 text-secondary-lighter;
+  @apply rounded-lg border border-green-300 shadow text-white;
   @apply inline-block;
 }
 
@@ -345,8 +345,8 @@ textarea.form-control {
 }
 
 .nav {
-  @apply mt-4 rounded-3xl shadow px-6 py-4 mx-9;
-  @apply flex justify-between items-center;
+  @apply shadow px-10 py-4 pl-20;
+  @apply flex justify-between items-center bg-white;
 }
 .nav .menu-icon {
   @apply cursor-pointer;
@@ -401,6 +401,10 @@ textarea.form-control {
 }
 .livewire-security h2 {
   @apply mb-4;
+}
+
+.naif {
+  @apply px-8 bg-red-200;
 }
 
 .page-invoice-profile {
@@ -863,13 +867,7 @@ ion-icon {
   @apply bg-secondary-light rounded-t-lg shadow-md;
 }
 .pharmacies .list .item-header:hover {
-  @apply bg-primary-dark;
-}
-.pharmacies .list .item-header:hover * {
-  @apply text-secondary-lighter;
-}
-.pharmacies .list .item-header:hover * .icon path {
-  @apply stroke-secondary-lighter fill-secondary-lighter;
+  @apply bg-secondary-dark/70;
 }
 .pharmacies .list .item-logo {
   @apply rounded-lg border-4 border-secondary-dark h-20 w-20;
@@ -886,6 +884,9 @@ ion-icon {
 }
 .pharmacies .list .item-link {
   @apply rounded-t-none;
+}
+.pharmacies .list .item-link:hover {
+  @apply bg-gradient-to-tr from-primary-base to-primary-darker;
 }
 .pharmacies .pharmacy-info {
   @apply flex items-center gap-2;

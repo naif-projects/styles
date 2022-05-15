@@ -33,13 +33,13 @@
       @apply bg-secondary-light rounded-t-lg shadow-md;
 
       &:hover {
-        @apply bg-primary-dark;
+        @apply bg-secondary-dark/70;
 
         & * {
-          @apply text-secondary-lighter;
+          // @apply text-secondary-lighter;
 
           .icon path {
-            @apply stroke-secondary-lighter fill-secondary-lighter;
+            // @apply stroke-secondary-lighter fill-secondary-lighter;
           }
         }
       }
@@ -64,6 +64,10 @@
 
     .item-link {
       @apply rounded-t-none;
+
+      &:hover {
+        @apply bg-gradient-to-tr from-primary-base to-primary-darker;
+      }
     }
   }
 
@@ -79,6 +83,4 @@
       @apply text-lg text-primary-darker;
     }
   }
-
- 
 }

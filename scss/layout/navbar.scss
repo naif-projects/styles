@@ -1,6 +1,6 @@
 .nav {
-  @apply mt-4 rounded-3xl shadow px-6 py-4 mx-9;
-  @apply flex justify-between items-center;
+  @apply shadow px-10 py-4 pl-20;
+  @apply flex justify-between items-center bg-white;
 
   .menu-icon {
     @apply cursor-pointer;

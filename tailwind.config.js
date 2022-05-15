@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./scss/index.scss', './scss/*/*.scss'],
+  content: ['./scss/index.scss', './scss/*/*.scss'],
   theme: {
     container: false,
     extend: {

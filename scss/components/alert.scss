@@ -1,6 +1,6 @@
 .alert-box {
-  @apply p-4 fixed bottom-8 left-5 bg-primary-dark text-secondary-lighter;
-  @apply rounded-lg border border-gray-300 shadow text-white;
+  @apply p-4 px-16 fixed bottom-8 left-5 bg-green-500 text-secondary-lighter;
+  @apply rounded-lg border border-green-300 shadow text-white;
   @apply inline-block;
 }
 
