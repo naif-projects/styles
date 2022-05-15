@@ -380,10 +380,6 @@ textarea.form-control {
   @apply mb-4;
 }
 
-.page-chat {
-  @apply px-8 bg-red-200;
-}
-
 :root {
   --animate-duration: 1s;
   --animate-delay: 1s;
@@ -906,4 +902,8 @@ ion-icon {
 }
 .wallet-box span {
   @apply text-primary-dark;
+}
+
+.page-chat {
+  @apply px-8 bg-red-200;
 }
