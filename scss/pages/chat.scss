@@ -1,3 +1,136 @@
-.page-chat {
-  @apply px-8 bg-red-200;
+.page-chat section {
+  @apply grid grid-cols-12 gap-8 min-h-[28rem];
+
+  .t-chat-sidebar {
+    @apply col-span-4;
+  }
+
+  .t-chat-messages {
+    @apply col-span-8;
+  }
+}
+
+// sidebar
+.page-chat .t-chat-sidebar {
+  @apply flex flex-col gap-4;
+  .t-item {
+    @apply flex gap-4 items-center p-2 px-4 rounded-lg;
+
+    @apply hover:cursor-pointer;
+
+    // active item
+    &.is-active {
+      @apply bg-secondary-light;
+    }
+
+    // avatar
+    &-avatar {
+      @apply relative bg-secondary-lighter rounded-full;
+
+      img {
+        @apply object-cover rounded-full;
+      }
+    }
+
+    .t-item-message-count {
+      @apply absolute -top-1 right-0 w-4 h-4 bg-primary-base text-secondary-light;
+      @apply flex justify-center items-center rounded-full text-sm;
+    }
+
+    // user name
+
+    &-name {
+      @apply w-full;
+
+      header {
+        @apply w-full flex justify-between;
+      }
+    }
+
+    &-title {
+      @apply text-primary-darker;
+    }
+
+    &-time {
+      @apply text-sm text-primary-lighter;
+    }
+
+    &-name footer {
+    }
+  }
+}
+
+// message
+.page-chat .t-chat-messages {
+  &-list {
+    @apply min-h-[10rem] max-h-96 overflow-x-hidden py-2;
+    @apply border-t border-b border-gray-200;
+
+    &::-webkit-scrollbar {
+      @apply w-0 opacity-0;
+    }
+  }
+
+  // time
+  .t-time {
+    @apply relative flex justify-center items-center mb-4;
+
+    span {
+      @apply text-gray-500 bg-white p-4 relative z-20;
+      @apply text-sm;
+    }
+
+    &::after {
+      content: '';
+      @apply bg-gray-300 h-[1px] absolute top-1/2 left-0 transform -translate-y-1/2;
+      @apply w-full z-10;
+    }
+  }
+
+  // message
+  .t-message {
+    @apply flex gap-2 items-center mb-2;
+
+    &-avatar img {
+      @apply object-cover rounded-full 
+      border-2
+      border-secondary-lighter;
+    }
+
+    &-left {
+      @apply flex-row-reverse text-left;
+
+      .t-content p {
+        @apply rounded-3xl rounded-bl-none bg-secondary-light text-primary-darker;
+      }
+    }
+  }
+
+  .t-content {
+    p {
+      @apply rounded-3xl rounded-br-none px-5 py-2;
+      @apply bg-primary-base text-white text-sm;
+      @apply max-w-xs self-end;
+    }
+  }
+
+  &-form {
+    @apply border-none border-gray-300 py-4 relative;
+
+    input {
+      @apply w-full pl-24 border;
+    }
+
+    &-actions {
+      @apply absolute left-4 top-1/2 transform -translate-y-1/2 flex items-center gap-1;
+    }
+
+    .t-icon-send {
+      @apply transform rotate-180;
+    }
+
+    ion-icon {
+      @apply text-primary-base;
+    }
+  }
 }

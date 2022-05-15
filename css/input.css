@@ -3,6 +3,84 @@
 @tailwind base;
 @tailwind variants;
 @tailwind components;
+.dashboard {
+  @apply flex justify-between overflow-x-hidden overflow-hidden;
+}
+.dashboard .sidebar {
+  @apply flex-1 sticky top-0;
+}
+.dashboard-content {
+  @apply flex-1 pb-14;
+}
+.dashboard-content main {
+  @apply pr-10 pt-10 min-h-full;
+}
+.dashboard .t-card {
+  @apply p-4 bg-white rounded-lg;
+}
+.dashboard .section-header {
+  @apply flex justify-between items-center mb-8;
+}
+.dashboard .section-header h1 {
+  @apply text-xl;
+}
+
+body {
+  @apply bg-secondary-lighter;
+}
+
+.nav {
+  @apply shadow px-10 py-4 pl-20;
+  @apply flex justify-between items-center bg-white;
+}
+.nav .menu-icon {
+  @apply cursor-pointer;
+}
+.nav-end {
+  @apply flex justify-between;
+}
+.nav-avatar img {
+  @apply w-10 h-10 rounded-full inline-block mr-4;
+}
+
+.sidebar {
+  @apply max-w-[15rem] w-full font-cairo whitespace-nowrap;
+  @apply min-h-screen px-4 bg-primary-darker text-secondary-lighter;
+}
+.sidebar-brand {
+  @apply mt-7 inline-block text-center w-full;
+}
+.sidebar .list {
+  @apply mt-7;
+}
+.sidebar .list-item-link {
+  @apply py-3 flex rounded items-center;
+}
+.sidebar .list-item-link.active {
+  @apply relative bg-secondary-light text-primary-dark;
+}
+.sidebar .list-item-link.active .icon svg,
+.sidebar .list-item-link.active .icon svg path {
+  @apply fill-primary-base;
+}
+.sidebar .list-item-link.active::before {
+  content: "";
+  @apply absolute h-full bg-secondary-light rounded-l top-0 -right-5 w-2;
+}
+.sidebar .list-item-icon {
+  @apply w-5 mx-5;
+}
+.sidebar .icon {
+  @apply w-6 mx-6;
+}
+.sidebar .icon ion-icon {
+  @apply text-2xl;
+}
+.sidebar .icon svg,
+.sidebar .icon path {
+  @apply fill-secondary-lighter;
+}
+
 .alert-box {
   @apply p-4 px-16 fixed bottom-8 left-5 bg-green-500 text-secondary-lighter;
   @apply rounded-lg border border-green-300 shadow text-white;
@@ -331,71 +409,6 @@ textarea.form-control {
   @apply text-sm;
 }
 
-.dashboard {
-  @apply flex justify-between overflow-x-hidden;
-}
-.dashboard .sidebar {
-  @apply flex-1;
-}
-.dashboard-content {
-  @apply flex-1 pb-14;
-}
-.dashboard .section-header {
-  @apply flex justify-between items-center my-8;
-}
-
-.nav {
-  @apply shadow px-10 py-4 pl-20;
-  @apply flex justify-between items-center bg-white;
-}
-.nav .menu-icon {
-  @apply cursor-pointer;
-}
-.nav-end {
-  @apply flex justify-between;
-}
-.nav-avatar img {
-  @apply w-10 h-10 rounded-full inline-block mr-4;
-}
-
-.sidebar {
-  @apply max-w-[15rem] w-full font-cairo whitespace-nowrap;
-  @apply min-h-screen px-4 bg-primary-darker text-secondary-lighter;
-}
-.sidebar-brand {
-  @apply mt-7 inline-block text-center w-full;
-}
-.sidebar .list {
-  @apply mt-7;
-}
-.sidebar .list-item-link {
-  @apply py-3 flex rounded items-center;
-}
-.sidebar .list-item-link.active {
-  @apply relative bg-secondary-light text-primary-dark;
-}
-.sidebar .list-item-link.active .icon svg,
-.sidebar .list-item-link.active .icon svg path {
-  @apply fill-primary-base;
-}
-.sidebar .list-item-link.active::before {
-  content: "";
-  @apply absolute h-full bg-secondary-light rounded-l top-0 -right-5 w-2;
-}
-.sidebar .list-item-icon {
-  @apply w-5 mx-5;
-}
-.sidebar .icon {
-  @apply w-6 mx-6;
-}
-.sidebar .icon ion-icon {
-  @apply text-2xl;
-}
-.sidebar .icon svg,
-.sidebar .icon path {
-  @apply fill-secondary-lighter;
-}
-
 .livewire-security {
   @apply max-w-2xl;
 }
@@ -403,8 +416,100 @@ textarea.form-control {
   @apply mb-4;
 }
 
-.page-chat {
-  @apply px-8 bg-red-200;
+.page-chat section {
+  @apply grid grid-cols-12 gap-8 min-h-[28rem];
+}
+.page-chat section .t-chat-sidebar {
+  @apply col-span-4;
+}
+.page-chat section .t-chat-messages {
+  @apply col-span-8;
+}
+
+.page-chat .t-chat-sidebar {
+  @apply flex flex-col gap-4;
+}
+.page-chat .t-chat-sidebar .t-item {
+  @apply flex gap-4 items-center p-2 px-4 rounded-lg;
+  @apply hover:cursor-pointer;
+}
+.page-chat .t-chat-sidebar .t-item.is-active {
+  @apply bg-secondary-light;
+}
+.page-chat .t-chat-sidebar .t-item-avatar {
+  @apply relative bg-secondary-lighter rounded-full;
+}
+.page-chat .t-chat-sidebar .t-item-avatar img {
+  @apply object-cover rounded-full;
+}
+.page-chat .t-chat-sidebar .t-item .t-item-message-count {
+  @apply absolute -top-1 right-0 w-4 h-4 bg-primary-base text-secondary-light;
+  @apply flex justify-center items-center rounded-full text-sm;
+}
+.page-chat .t-chat-sidebar .t-item-name {
+  @apply w-full;
+}
+.page-chat .t-chat-sidebar .t-item-name header {
+  @apply w-full flex justify-between;
+}
+.page-chat .t-chat-sidebar .t-item-title {
+  @apply text-primary-darker;
+}
+.page-chat .t-chat-sidebar .t-item-time {
+  @apply text-sm text-primary-lighter;
+}
+.page-chat .t-chat-messages-list {
+  @apply min-h-[10rem] max-h-96 overflow-x-hidden py-2;
+  @apply border-t border-b border-gray-200;
+}
+.page-chat .t-chat-messages-list::-webkit-scrollbar {
+  @apply w-0 opacity-0;
+}
+.page-chat .t-chat-messages .t-time {
+  @apply relative flex justify-center items-center mb-4;
+}
+.page-chat .t-chat-messages .t-time span {
+  @apply text-gray-500 bg-white p-4 relative z-20;
+  @apply text-sm;
+}
+.page-chat .t-chat-messages .t-time::after {
+  content: "";
+  @apply bg-gray-300 h-[1px] absolute top-1/2 left-0 transform -translate-y-1/2;
+  @apply w-full z-10;
+}
+.page-chat .t-chat-messages .t-message {
+  @apply flex gap-2 items-center mb-2;
+}
+.page-chat .t-chat-messages .t-message-avatar img {
+  @apply object-cover rounded-full 
+      border-2
+      border-secondary-lighter;
+}
+.page-chat .t-chat-messages .t-message-left {
+  @apply flex-row-reverse text-left;
+}
+.page-chat .t-chat-messages .t-message-left .t-content p {
+  @apply rounded-3xl rounded-bl-none bg-secondary-light text-primary-darker;
+}
+.page-chat .t-chat-messages .t-content p {
+  @apply rounded-3xl rounded-br-none px-5 py-2;
+  @apply bg-primary-base text-white text-sm;
+  @apply max-w-xs self-end;
+}
+.page-chat .t-chat-messages-form {
+  @apply border-none border-gray-300 py-4 relative;
+}
+.page-chat .t-chat-messages-form input {
+  @apply w-full pl-24 border;
+}
+.page-chat .t-chat-messages-form-actions {
+  @apply absolute left-4 top-1/2 transform -translate-y-1/2 flex items-center gap-1;
+}
+.page-chat .t-chat-messages-form .t-icon-send {
+  @apply transform rotate-180;
+}
+.page-chat .t-chat-messages-form ion-icon {
+  @apply text-primary-base;
 }
 
 .page-invoice-profile {
@@ -588,32 +693,25 @@ ion-icon {
 
 .container {
   @apply mx-auto px-8;
-}
-.container .container {
   width: 100%;
 }
 @media (min-width: 640px) {
-  .container .container {
-    max-width: 640px;
-  }
-}
-@media (min-width: 768px) {
-  .container .container {
-    max-width: 768px;
+  .container {
+    max-width: 98%;
   }
 }
 @media (min-width: 1024px) {
-  .container .container {
+  .container {
     max-width: 1024px;
   }
 }
 @media (min-width: 1280px) {
-  .container .container {
+  .container {
     max-width: 1280px;
   }
 }
 @media (min-width: 1536px) {
-  .container .container {
+  .container {
     max-width: 1536px;
   }
 }
