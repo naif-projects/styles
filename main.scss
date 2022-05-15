@@ -13,7 +13,6 @@
 @import 'scss/layout/navbar.scss'; 
 @import 'scss/layout/sidebar.scss'; 
 @import 'scss/livewire/security.scss'; 
-@import 'scss/naif/chat.scss'; 
 @import 'scss/utils/animation.scss'; 
 @import 'scss/utils/global.scss'; 
 @import 'scss/utils/typography.scss'; 
@@ -30,4 +29,5 @@
 @import 'scss/components/alert.scss'; 
 @import 'scss/layout/dashboard.scss'; 
 @import 'scss/pages/invoice-profile.scss'; 
-@import 'scss/custom/wallet.scss';
+@import 'scss/custom/wallet.scss'; 
+@import 'scss/pages/chat.scss';

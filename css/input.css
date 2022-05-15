@@ -380,7 +380,7 @@ textarea.form-control {
   @apply mb-4;
 }
 
-.naif {
+.page-chat {
   @apply px-8 bg-red-200;
 }
 
