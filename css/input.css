@@ -3,84 +3,6 @@
 @tailwind base;
 @tailwind variants;
 @tailwind components;
-.dashboard {
-  @apply flex justify-between overflow-x-hidden overflow-hidden;
-}
-.dashboard .sidebar {
-  @apply flex-1 sticky top-0;
-}
-.dashboard-content {
-  @apply flex-1 pb-14;
-}
-.dashboard-content main {
-  @apply pr-10 pt-10 min-h-full;
-}
-.dashboard .t-card {
-  @apply p-4 bg-white rounded-lg;
-}
-.dashboard .section-header {
-  @apply flex justify-between items-center mb-8;
-}
-.dashboard .section-header h1 {
-  @apply text-xl;
-}
-
-body {
-  @apply bg-secondary-lighter;
-}
-
-.nav {
-  @apply shadow px-10 py-4 pl-20;
-  @apply flex justify-between items-center bg-white;
-}
-.nav .menu-icon {
-  @apply cursor-pointer;
-}
-.nav-end {
-  @apply flex justify-between items-center;
-}
-.nav-avatar img {
-  @apply w-10 h-10 rounded-full inline-block mr-4;
-}
-
-.sidebar {
-  @apply max-w-[15rem] w-full font-cairo whitespace-nowrap;
-  @apply min-h-screen px-4 bg-primary-darker text-secondary-lighter;
-}
-.sidebar-brand {
-  @apply mt-7 inline-block text-center w-full;
-}
-.sidebar .list {
-  @apply mt-7;
-}
-.sidebar .list-item-link {
-  @apply py-3 flex rounded items-center;
-}
-.sidebar .list-item-link.active {
-  @apply relative bg-secondary-light text-primary-dark;
-}
-.sidebar .list-item-link.active .icon svg,
-.sidebar .list-item-link.active .icon svg path {
-  @apply fill-primary-base;
-}
-.sidebar .list-item-link.active::before {
-  content: "";
-  @apply absolute h-full bg-secondary-light rounded-l top-0 -right-5 w-2;
-}
-.sidebar .list-item-icon {
-  @apply w-5 mx-5;
-}
-.sidebar .icon {
-  @apply w-6 mx-6;
-}
-.sidebar .icon ion-icon {
-  @apply text-2xl;
-}
-.sidebar .icon svg,
-.sidebar .icon path {
-  @apply fill-secondary-lighter;
-}
-
 .alert-box {
   @apply p-4 px-16 fixed bottom-8 left-5 bg-green-500 text-secondary-lighter;
   @apply rounded-lg border border-green-300 shadow text-white;
@@ -276,7 +198,7 @@ textarea.form-control {
 }
 
 .t-notification {
-  @apply flex items-center relative;
+  @apply flex items-center relative z-50;
 }
 .t-notification-counter {
   @apply absolute -top-2 left-3 rounded-full w-5 h-5 bg-primary-base px-1 text-sm;
@@ -288,26 +210,52 @@ textarea.form-control {
 }
 .t-notification-content {
   @apply hidden bg-secondary-lighter  absolute top-0 left-0  min-w-[10rem];
-  @apply rounded;
+  @apply rounded shadow;
   transform: translate(0px, 40px);
 }
 .t-notification-content .t-item {
   @apply px-6 py-2 border-b border-secondary-light;
 }
 .t-notification-content .t-header {
-  @apply flex gap-4 items-center;
+  @apply px-4 py-2 border border-secondary-light;
+}
+.t-notification-content .t-header .t-title {
+  @apply text-sm;
+}
+.t-notification-content .t-item-header {
+  @apply flex gap-2 items-center;
+}
+.t-notification-content .t-user {
+  @apply flex justify-between items-center;
 }
 .t-notification-content .t-name {
-  @apply text-lg;
+  @apply text-sm;
+}
+.t-notification-content .t-date {
+  @apply text-xs text-secondary-darker;
 }
 .t-notification-content .t-avatar {
-  @apply max-w-[20px] rounded-full;
+  @apply relative;
+}
+.t-notification-content .t-avatar img {
+  @apply rounded-full border border-gray-200;
+  @apply w-8 h-8 rounded-full;
+}
+.t-notification-content .t-avatar.is-not-read::after {
+  @apply w-2 h-2 rounded-full bg-primary-dark absolute bottom-[2px] left-[2px];
+  content: "";
 }
 .t-notification-content .t-desc {
   @apply mt-2 whitespace-normal;
 }
 .t-notification .is-open {
   @apply block;
+}
+.t-notification-footer {
+  @apply p-2 flex justify-center items-center;
+}
+.t-notification-footer a {
+  @apply w-full text-sm px-2 py-1 ring-1 ring-secondary-light rounded text-center;
 }
 
 .or {
@@ -409,6 +357,94 @@ textarea.form-control {
   @apply text-sm;
 }
 
+.wallet {
+  @apply ml-5;
+}
+.wallet-box {
+  @apply flex justify-center items-center gap-2 rounded-md bg-secondary-light border border-secondary-dark px-5 py-1;
+}
+.wallet-box span {
+  @apply text-primary-dark;
+}
+
+.dashboard {
+  @apply flex justify-between overflow-x-hidden overflow-hidden;
+}
+.dashboard .sidebar {
+  @apply flex-1 sticky top-0;
+}
+.dashboard-content {
+  @apply flex-1 pb-14;
+}
+.dashboard-content main {
+  @apply pr-10 pt-10 min-h-full;
+}
+.dashboard .t-card {
+  @apply p-4 bg-white rounded-lg;
+}
+.dashboard .section-header {
+  @apply flex justify-between items-center mb-8;
+}
+.dashboard .section-header h1 {
+  @apply text-xl;
+}
+
+body {
+  @apply bg-secondary-lighter;
+}
+
+.nav {
+  @apply shadow px-10 py-4 pl-20;
+  @apply flex justify-between items-center bg-white;
+}
+.nav .menu-icon {
+  @apply cursor-pointer;
+}
+.nav-end {
+  @apply flex justify-between items-center;
+}
+.nav-avatar img {
+  @apply w-10 h-10 rounded-full inline-block mr-4;
+}
+
+.sidebar {
+  @apply max-w-[15rem] w-full font-cairo whitespace-nowrap;
+  @apply min-h-screen px-4 bg-primary-darker text-secondary-lighter;
+}
+.sidebar-brand {
+  @apply mt-7 inline-block text-center w-full;
+}
+.sidebar .list {
+  @apply mt-7;
+}
+.sidebar .list-item-link {
+  @apply py-3 flex rounded items-center;
+}
+.sidebar .list-item-link.active {
+  @apply relative bg-secondary-light text-primary-dark;
+}
+.sidebar .list-item-link.active .icon svg,
+.sidebar .list-item-link.active .icon svg path {
+  @apply fill-primary-base;
+}
+.sidebar .list-item-link.active::before {
+  content: "";
+  @apply absolute h-full bg-secondary-light rounded-l top-0 -right-5 w-2;
+}
+.sidebar .list-item-icon {
+  @apply w-5 mx-5;
+}
+.sidebar .icon {
+  @apply w-6 mx-6;
+}
+.sidebar .icon ion-icon {
+  @apply text-2xl;
+}
+.sidebar .icon svg,
+.sidebar .icon path {
+  @apply fill-secondary-lighter;
+}
+
 .livewire-security {
   @apply max-w-2xl;
 }
@@ -506,7 +542,10 @@ textarea.form-control {
   @apply absolute left-4 top-1/2 transform -translate-y-1/2 flex items-center gap-1;
 }
 .page-chat .t-chat-messages-form .t-icon-send {
-  @apply transform rotate-180;
+  @apply transform rotate-180 bg-primary-base p-1 rounded;
+}
+.page-chat .t-chat-messages-form .t-icon-send ion-icon {
+  @apply text-white text-sm;
 }
 .page-chat .t-chat-messages-form ion-icon {
   @apply text-primary-base;
@@ -672,6 +711,7 @@ ion-icon {
 
 .icon {
   @apply flex items-center;
+  @apply cursor-pointer;
 }
 
 ::-webkit-scrollbar {
@@ -687,12 +727,8 @@ ion-icon {
   @apply border-secondary-base my-10;
 }
 
-.icon {
-  @apply cursor-pointer;
-}
-
 .container {
-  @apply mx-auto px-8;
+  @apply mx-auto pl-8;
   width: 100%;
 }
 @media (min-width: 640px) {
@@ -714,6 +750,28 @@ ion-icon {
   .container {
     max-width: 1536px;
   }
+}
+
+.t-param-error {
+  direction: ltr;
+  @apply fixed inset-0 w-full h-full bg-gray-800 p-20 flex justify-center items-center flex-col;
+  @apply z-[1000] text-xl text-center;
+}
+.t-param-error strong {
+  @apply text-2xl text-green-600;
+}
+.t-param-error strong::after {
+  content: " component param messing. bro you need to pass";
+}
+.t-param-error span {
+  @apply font-bold text-red-600;
+}
+.t-param-error span::before {
+  content: "$";
+}
+.t-param-error::after {
+  @apply block text-white mt-8;
+  content: " check your code again 😅";
 }
 
 .text-base {
@@ -994,14 +1052,4 @@ ion-icon {
 }
 .pharmacies .pharmacy-info .pharmacy-title {
   @apply text-lg text-primary-darker;
-}
-
-.wallet {
-  @apply ml-5;
-}
-.wallet-box {
-  @apply flex justify-center items-center gap-2 rounded-md bg-secondary-light border border-secondary-dark px-5 py-1;
-}
-.wallet-box span {
-  @apply text-primary-dark;
 }

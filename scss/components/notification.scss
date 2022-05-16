@@ -1,5 +1,5 @@
 .t-notification {
-  @apply flex items-center relative;
+  @apply flex items-center relative z-50;
 
   * {
     // box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.466) !important;
@@ -24,7 +24,7 @@
 
   &-content {
     @apply hidden bg-secondary-lighter  absolute top-0 left-0  min-w-[10rem];
-    @apply rounded;
+    @apply rounded shadow;
 
     transform: translate(0px, 40px);
 
@@ -34,15 +34,43 @@
       }
 
       &-header {
-        @apply flex gap-4 items-center;
+        @apply px-4 py-2 border border-secondary-light;
+
+        .t-title {
+          @apply text-sm;
+        }
+      }
+
+      // item
+      &-item-header {
+        @apply flex gap-2 items-center;
+      }
+
+      &-user {
+        @apply flex justify-between items-center;
       }
 
       &-name {
-        @apply text-lg;
+        @apply text-sm;
+      }
+
+      &-date {
+        @apply text-xs text-secondary-darker;
       }
 
       &-avatar {
-        @apply max-w-[20px] rounded-full;
+        @apply relative;
+        img {
+          @apply rounded-full border border-gray-200;
+          @apply w-8 h-8 rounded-full;
+        }
+
+        &.is-not-read {
+          &::after {
+            @apply w-2 h-2 rounded-full bg-primary-dark absolute bottom-[2px] left-[2px];
+            content: '';
+          }
+        }
       }
 
       &-desc {
@@ -53,5 +81,13 @@
 
   .is-open {
     @apply block;
+  }
+
+  &-footer {
+    @apply p-2 flex justify-center items-center;
+
+    a {
+      @apply w-full text-sm px-2 py-1 ring-1 ring-secondary-light rounded text-center;
+    }
   }
 }

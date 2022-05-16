@@ -12,6 +12,7 @@ ion-icon {
 
 .icon {
   @apply flex items-center;
+  @apply cursor-pointer;
 }
 
 ::-webkit-scrollbar {
@@ -36,12 +37,8 @@ ion-icon {
   @apply border-secondary-base my-10;
 }
 
-.icon {
-  @apply cursor-pointer;
-}
-
 .container {
-  @apply mx-auto px-8;
+  @apply mx-auto pl-8;
 
   width: 100%;
 
@@ -57,5 +54,32 @@ ion-icon {
   }
   @media (min-width: 1536px) {
     max-width: 1536px;
+  }
+}
+
+.t-param-error {
+  direction: ltr;
+  @apply fixed inset-0 w-full h-full bg-gray-800 p-20 flex justify-center items-center flex-col;
+  @apply z-[1000] text-xl text-center;
+
+  strong {
+    @apply text-2xl text-green-600;
+
+    &::after {
+      content: ' component param messing. bro you need to pass';
+    }
+  }
+
+  span {
+    &::before {
+      content: '$';
+    }
+
+    @apply font-bold text-red-600;
+  }
+
+  &::after {
+    @apply block text-white mt-8;
+    content: ' check your code again 😅';
   }
 }

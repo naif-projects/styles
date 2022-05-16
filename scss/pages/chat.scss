@@ -126,7 +126,11 @@
     }
 
     .t-icon-send {
-      @apply transform rotate-180;
+      @apply transform rotate-180 bg-primary-base p-1 rounded;
+
+      ion-icon {
+        @apply text-white text-sm;
+      }
     }
 
     ion-icon {

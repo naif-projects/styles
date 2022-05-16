@@ -1,7 +1,4 @@
 @import 'scss/index.scss'; 
-@import 'scss/layout/dashboard.scss'; 
-@import 'scss/layout/navbar.scss'; 
-@import 'scss/layout/sidebar.scss'; 
 @import 'scss/components/alert.scss'; 
 @import 'scss/components/badge.scss'; 
 @import 'scss/components/buttons.scss'; 
@@ -14,6 +11,10 @@
 @import 'scss/components/order-details.scss'; 
 @import 'scss/components/quotation-form.scss'; 
 @import 'scss/components/table.scss'; 
+@import 'scss/custom/wallet.scss'; 
+@import 'scss/layout/dashboard.scss'; 
+@import 'scss/layout/navbar.scss'; 
+@import 'scss/layout/sidebar.scss'; 
 @import 'scss/livewire/security.scss'; 
 @import 'scss/pages/chat.scss'; 
 @import 'scss/pages/invoice-profile.scss'; 
@@ -29,5 +30,4 @@
 @import 'scss/pages/pharmacies/orders.scss'; 
 @import 'scss/pages/pharmacies/page-create-quotation.scss'; 
 @import 'scss/pages/web/pharamcy-profile.scss'; 
-@import 'scss/pages/web/pharmacies.scss'; 
-@import 'scss/custom/wallet.scss';
+@import 'scss/pages/web/pharmacies.scss';
