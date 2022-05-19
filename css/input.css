@@ -208,19 +208,28 @@ textarea.form-control {
 .t-notification .t-notification-icon {
   @apply w-5 h-5 relative;
 }
-.t-notification-content {
+.t-notification-content-wrapper {
   @apply hidden bg-secondary-lighter  absolute top-0 left-0  min-w-[10rem];
-  @apply rounded shadow;
+  @apply rounded shadow w-[300px];
   transform: translate(0px, 40px);
+}
+.t-notification-content-wrapper .t-notification-header {
+  @apply px-4 py-2 border border-secondary-light;
+}
+.t-notification-content-wrapper .t-notification-header .t-title {
+  @apply text-sm;
+}
+.t-notification-content-wrapper .t-notification-footer {
+  @apply p-2 flex justify-center items-center;
+}
+.t-notification-content-wrapper .t-notification-footer a {
+  @apply w-full text-sm px-2 py-1 ring-1 ring-secondary-light rounded text-center;
+}
+.t-notification-content {
+  @apply max-h-60 overflow-y-scroll;
 }
 .t-notification-content .t-item {
   @apply px-6 py-2 border-b border-secondary-light;
-}
-.t-notification-content .t-header {
-  @apply px-4 py-2 border border-secondary-light;
-}
-.t-notification-content .t-header .t-title {
-  @apply text-sm;
 }
 .t-notification-content .t-item-header {
   @apply flex gap-2 items-center;
@@ -246,16 +255,10 @@ textarea.form-control {
   content: "";
 }
 .t-notification-content .t-desc {
-  @apply mt-2 whitespace-normal;
+  @apply mt-2 whitespace-normal text-sm text-primary-base;
 }
 .t-notification .is-open {
   @apply block;
-}
-.t-notification-footer {
-  @apply p-2 flex justify-center items-center;
-}
-.t-notification-footer a {
-  @apply w-full text-sm px-2 py-1 ring-1 ring-secondary-light rounded text-center;
 }
 
 .or {
@@ -368,13 +371,13 @@ textarea.form-control {
 }
 
 .dashboard {
-  @apply flex justify-between overflow-x-hidden overflow-hidden;
+  @apply flex justify-between;
 }
 .dashboard .sidebar {
   @apply flex-1 sticky top-0;
 }
 .dashboard-content {
-  @apply flex-1 pb-14;
+  @apply flex-1 pb-14 overflow-x-hidden max-h-screen;
 }
 .dashboard-content main {
   @apply pr-10 pt-10 min-h-full;
@@ -409,7 +412,7 @@ body {
 
 .sidebar {
   @apply max-w-[15rem] w-full font-cairo whitespace-nowrap;
-  @apply min-h-screen px-4 bg-primary-darker text-secondary-lighter;
+  @apply min-h-screen max-h-screen px-4 bg-primary-darker text-secondary-lighter;
 }
 .sidebar-brand {
   @apply mt-7 inline-block text-center w-full;

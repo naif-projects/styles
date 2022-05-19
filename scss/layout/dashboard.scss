@@ -1,12 +1,12 @@
 .dashboard {
-  @apply flex justify-between overflow-x-hidden overflow-hidden;
+  @apply flex justify-between;
 
   .sidebar {
     @apply flex-1 sticky top-0;
   }
 
   &-content {
-    @apply flex-1 pb-14;
+    @apply flex-1 pb-14 overflow-x-hidden max-h-screen;
     // width: 100%;
 
     main {
