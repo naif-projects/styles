@@ -1,8 +1,8 @@
 .table {
-  @apply border shadow-primary-lighter shadow w-full rounded-lg;
+  @apply border  w-full;
 
   &-wrapper {
-    @apply overflow-x-scroll w-full;
+    @apply overflow-x-scroll w-full min-h-[10rem] rounded-lg;
 
     @media (max-width: 480px) {
       max-width: 350px;
@@ -21,11 +21,11 @@
 
   tbody {
     td {
-      @apply p-4 text-center whitespace-nowrap;
+      @apply bg-white p-4 text-center whitespace-nowrap border-b border-primary-lighter/40;
     }
 
     tr:nth-of-type(odd) td {
-      @apply bg-secondary-light;
+      @apply bg-secondary-lighter;
     }
 
     td.table-action {

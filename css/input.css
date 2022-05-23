@@ -6,7 +6,7 @@
 .alert-box {
   @apply p-4 px-16 fixed bottom-8 left-5 bg-green-500 text-secondary-lighter;
   @apply rounded-lg border border-green-300 shadow text-white;
-  @apply inline-block;
+  @apply inline-block z-[1000];
 }
 
 .error {
@@ -15,22 +15,26 @@
 
 .badge {
   @apply inline-block px-2 py-1 rounded text-center;
-  @apply text-sm font-bold  whitespace-nowrap align-baseline;
+  @apply text-xs font-bold  whitespace-nowrap align-baseline;
 }
 .badge-primary {
-  @apply bg-blue-500 text-blue-100;
-}
-.badge-info {
-  @apply bg-sky-500 text-sky-100;
+  @apply bg-[#f3f4f6] text-[#1f2937] border-[#1f2937]/30;
 }
 .badge-success {
-  @apply bg-green-500 text-green-100;
+  @apply bg-[#d1fae5] text-[#0d644b] border-[#0d644b]/30;
+}
+.badge-info {
+  @apply bg-[#dbeafe] text-[#2849b3] border-[#2849b3]/30;
+}
+.badge-warning {
+  @apply bg-[#fef3c7] text-[#92400e] border-[#92400e]/30;
 }
 .badge-danger {
-  @apply bg-red-500 text-red-100;
+  @apply bg-[#fee2e2] text-[#991b1b] border-[#991b1b]/30;
 }
 
-.btn, .btn-rounded {
+.btn, .btn-rounded,
+button.t-btn {
   @apply px-5 py-2 text-secondary-lighter rounded whitespace-nowrap;
   @apply transition-colors delay-100 hover:bg-primary-dark hover:text-secondary-light;
   @apply bg-primary-dark;
@@ -64,6 +68,19 @@
 }
 .t-dropdown-item button:hover {
   @apply bg-primary-base transition-colors text-secondary-lighter;
+}
+
+.t-footer {
+  @apply bg-primary-darker py-4;
+}
+.t-footer .t-social {
+  @apply flex justify-center gap-2 mt-2;
+}
+.t-footer .t-social img {
+  @apply w-6;
+}
+.t-footer .t-links {
+  @apply mt-4 flex gap-4 items-center justify-center;
 }
 
 .form-group {
@@ -179,7 +196,7 @@ textarea.form-control {
   @apply py-4 px-6 min-h-[10rem] max-h-96 overflow-y-scroll;
 }
 .t-modal-footer {
-  @apply px-6 py-3 shadow shadow-primary-light;
+  @apply px-6 py-3 shadow shadow-primary-light text-left;
 }
 .t-modal .t-description {
   @apply whitespace-normal mb-8;
@@ -325,11 +342,31 @@ textarea.form-control {
   @apply text-primary-darker m-1 font-semibold text-lg underline underline-offset-4 decoration-wavy;
 }
 
+.t-table-dropdown {
+  @apply relative;
+}
+.t-table-dropdown.is-active {
+  @apply block z-50;
+}
+.t-table-dropdown-menu-btn {
+  @apply p-1 text-xl;
+}
+.t-table-dropdown-content {
+  @apply absolute -top-10 left-0 bg-white rounded-lg px-2 py-1;
+  @apply border border-secondary-light;
+}
+.t-table-dropdown-content div {
+  @apply py-2;
+}
+.t-table-dropdown-content * + * {
+  @apply border-t border-secondary-light;
+}
+
 .table {
-  @apply border shadow-primary-lighter shadow w-full rounded-lg;
+  @apply border  w-full;
 }
 .table-wrapper {
-  @apply overflow-x-scroll w-full;
+  @apply overflow-x-scroll w-full min-h-[10rem] rounded-lg;
 }
 @media (max-width: 480px) {
   .table-wrapper {
@@ -345,10 +382,10 @@ textarea.form-control {
   @apply bg-white p-4;
 }
 .table tbody td {
-  @apply p-4 text-center whitespace-nowrap;
+  @apply bg-white p-4 text-center whitespace-nowrap border-b border-primary-lighter/40;
 }
 .table tbody tr:nth-of-type(odd) td {
-  @apply bg-secondary-light;
+  @apply bg-secondary-lighter;
 }
 .table tbody td.table-action button:first-of-type {
   @apply ml-3;
@@ -377,10 +414,10 @@ textarea.form-control {
   @apply flex-1 sticky top-0;
 }
 .dashboard-content {
-  @apply flex-1 pb-14 overflow-x-hidden max-h-screen;
+  @apply flex-1 pb-14 px-4 lg:px-10  overflow-x-hidden max-h-screen;
 }
 .dashboard-content main {
-  @apply pr-10 pt-10 min-h-full;
+  @apply mt-10 min-h-full;
 }
 .dashboard .t-card {
   @apply p-4 bg-white rounded-lg;
@@ -396,8 +433,12 @@ body {
   @apply bg-secondary-lighter;
 }
 
+.t-nav-wrapper {
+  @apply sticky top-0 z-[1000];
+}
+
 .nav {
-  @apply shadow px-10 py-4 pl-20;
+  @apply shadow px-10 py-4 -mx-10;
   @apply flex justify-between items-center bg-white;
 }
 .nav .menu-icon {
@@ -412,19 +453,28 @@ body {
 
 .sidebar {
   @apply max-w-[15rem] w-full font-cairo whitespace-nowrap;
-  @apply min-h-screen max-h-screen px-4 bg-primary-darker text-secondary-lighter;
+  @apply min-h-screen px-4 bg-primary-darker text-secondary-lighter;
 }
-.sidebar-brand {
+.sidebar-logo {
   @apply mt-7 inline-block text-center w-full;
+}
+.sidebar-logo .t-title {
+  @apply text-lg text-secondary-lighter font-bold;
+}
+.sidebar-logo .t-subtitle {
+  @apply text-secondary-base font-normal text-sm relative top-1;
 }
 .sidebar .list {
   @apply mt-7;
 }
 .sidebar .list-item-link {
-  @apply py-3 flex rounded items-center;
+  @apply py-3 px-4 flex rounded items-center;
 }
 .sidebar .list-item-link.active {
   @apply relative bg-secondary-light text-primary-dark;
+}
+.sidebar .list-item-link.active .t-font-icon {
+  @apply text-primary-base;
 }
 .sidebar .list-item-link.active .icon svg,
 .sidebar .list-item-link.active .icon svg path {
@@ -434,11 +484,11 @@ body {
   content: "";
   @apply absolute h-full bg-secondary-light rounded-l top-0 -right-5 w-2;
 }
-.sidebar .list-item-icon {
-  @apply w-5 mx-5;
+.sidebar .t-font-icon {
+  @apply text-xl text-secondary-lighter ml-4;
 }
 .sidebar .icon {
-  @apply w-6 mx-6;
+  @apply w-6 ml-4;
 }
 .sidebar .icon ion-icon {
   @apply text-2xl;
@@ -498,11 +548,14 @@ body {
   @apply text-sm text-primary-lighter;
 }
 .page-chat .t-chat-messages-list {
-  @apply min-h-[10rem] max-h-96 overflow-x-hidden py-2;
+  @apply max-h-96 overflow-x-hidden py-2;
   @apply border-t border-b border-gray-200;
 }
 .page-chat .t-chat-messages-list::-webkit-scrollbar {
   @apply w-0 opacity-0;
+}
+.page-chat .t-chat-messages .t-chat-messages-list {
+  @apply min-h-[28rem];
 }
 .page-chat .t-chat-messages .t-time {
   @apply relative flex justify-center items-center mb-4;
@@ -520,7 +573,7 @@ body {
   @apply flex gap-2 items-center mb-2;
 }
 .page-chat .t-chat-messages .t-message-avatar img {
-  @apply object-cover rounded-full 
+  @apply object-cover rounded-full
       border-2
       border-secondary-lighter;
 }
@@ -536,7 +589,7 @@ body {
   @apply max-w-xs self-end;
 }
 .page-chat .t-chat-messages-form {
-  @apply border-none border-gray-300 py-4 relative;
+  @apply border-none border-gray-300 relative;
 }
 .page-chat .t-chat-messages-form input {
   @apply w-full pl-24 border;
@@ -556,6 +609,12 @@ body {
 
 .page-invoice-profile {
   @apply mt-8;
+}
+.page-invoice-profile .t-wallet-wrapper {
+  @apply flex justify-end items-center;
+}
+.page-invoice-profile .t-wallet {
+  @apply flex justify-end items-center gap-2 bg-secondary-lighter py-1 px-5 border border-secondary-light rounded-md;
 }
 .page-invoice-profile .t-bg {
   @apply min-h-[20rem] bg-primary-light rounded-lg;
@@ -577,7 +636,7 @@ body {
 }
 
 .page-invoice-profile .t-content {
-  @apply mt-8;
+  @apply mt-8 bg-white;
 }
 .page-invoice-profile .t-content header {
   @apply flex gap-3 items-center;
@@ -588,11 +647,14 @@ body {
 .page-invoice-profile .t-content .t-log-data {
   @apply ring-1 ring-gray-200 p-8 rounded-lg;
 }
+.page-invoice-profile .t-content .t-log-data .t-font-icon {
+  @apply text-primary-base text-2xl;
+}
 .page-invoice-profile .t-content .t-list {
   @apply mt-8 border-r border-gray-300 space-y-12;
 }
 .page-invoice-profile .t-content .t-item {
-  @apply pr-16  relative;
+  @apply pr-8  relative;
 }
 .page-invoice-profile .t-content .t-item-header {
   @apply flex justify-between;
@@ -601,7 +663,7 @@ body {
   @apply text-lg font-semibold flex  items-center;
 }
 .page-invoice-profile .t-content .t-item-header h4::before {
-  @apply w-6 h-6 rounded-full bg-red-500  absolute top-0 -right-3;
+  @apply w-4 h-4 rounded-full bg-red-500  absolute top-2 -right-2 ring-8 ring-red-500/10;
   content: "";
 }
 .page-invoice-profile .t-content .t-item-header .t-date {
@@ -712,8 +774,13 @@ ion-icon {
   @apply text-xl;
 }
 
+.t-font-icon,
 .icon {
   @apply flex items-center;
+}
+
+a .t-font-icon,
+a .icon {
   @apply cursor-pointer;
 }
 
@@ -777,6 +844,10 @@ ion-icon {
   content: " check your code again 😅";
 }
 
+.t-mt-8 {
+  @apply mt-8;
+}
+
 .text-base {
   @apply text-primary-dark font-medium;
 }
@@ -799,66 +870,82 @@ ion-icon {
   @apply text-center inline-block mt-8;
 }
 
+.page-admin-report .t-chart {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+.page-admin-report .t-chart-item {
+  @apply border border-secondary-base border-dashed p-4 rounded;
+}
+.page-admin-report .t-chart-item canvas {
+  @apply w-full max-h-[400px];
+}
+.page-admin-report .t-chart-item:nth-of-type(4) {
+  @apply lg:col-span-3;
+}
+.page-admin-report .t-chart-title {
+  @apply text-primary-base text-xl mb-4;
+}
+
 .manage-website .section {
   @apply max-w-3xl shadow-lg p-8 mt-10;
 }
 
-.pharmacy-profile {
-  @apply mt-16 mx-9 shadow p-10 rounded-lg;
+.page-pharmacy-profile .t-pharmacy-content {
+  @apply mt-8;
 }
-.pharmacy-profile .pharmacy-info {
+.page-pharmacy-profile .pharmacy-info {
   @apply flex flex-col justify-center lg:flex-row lg:justify-between gap-4;
 }
-.pharmacy-profile .profile-form {
+.page-pharmacy-profile .profile-form {
   @apply flex-1 order-1;
 }
-.pharmacy-profile .profile-form .address-selects {
+.page-pharmacy-profile .profile-form .address-selects {
   @apply flex justify-between gap-5;
 }
-.pharmacy-profile .profile-form .address-selects select {
+.page-pharmacy-profile .profile-form .address-selects select {
   @apply flex-1 mb-4;
 }
-.pharmacy-profile .upload-image {
+.page-pharmacy-profile .upload-image {
   @apply mx-auto flex-auto lg:mx-4 text-center max-w-[12rem] lg:order-2;
 }
-.pharmacy-profile .upload-image .avatar {
+.page-pharmacy-profile .upload-image .avatar {
   @apply border-8 border-secondary-light rounded;
 }
-.pharmacy-profile .upload-image .update-btn {
+.page-pharmacy-profile .upload-image .update-btn {
   @apply p-2 bg-secondary-light rounded-lg transform -translate-y-6;
 }
-.pharmacy-profile .upload-image .update-btn svg {
+.page-pharmacy-profile .upload-image .update-btn svg {
   @apply fill-primary-dark w-6 h-6;
 }
-.pharmacy-profile .contact-us-header {
+.page-pharmacy-profile .contact-us-header {
   @apply flex items-center gap-4;
 }
-.pharmacy-profile .contact-us .item {
+.page-pharmacy-profile .contact-us .item {
   @apply flex justify-between items-center mt-4;
 }
-.pharmacy-profile .contact-us .item .item__column {
+.page-pharmacy-profile .contact-us .item .item__column {
   @apply flex gap-4 items-center;
 }
-.pharmacy-profile .social {
+.page-pharmacy-profile .social {
   @apply max-w-xl;
 }
-.pharmacy-profile .social .item {
+.page-pharmacy-profile .social .item {
   @apply flex items-center gap-4 mt-4 relative;
 }
-.pharmacy-profile .social .item .icon {
+.page-pharmacy-profile .social .item .icon {
   @apply absolute top-1/2 right-4 transform -translate-y-1/2;
 }
-.pharmacy-profile .social .item input {
+.page-pharmacy-profile .social .item input {
   @apply w-full pr-12;
   direction: ltr;
 }
-.pharmacy-profile .social .btn, .pharmacy-profile .social .btn-rounded {
+.page-pharmacy-profile .social .btn, .page-pharmacy-profile .social .btn-rounded {
   @apply mt-6;
 }
-
-.page-invoice {
-  @apply mt-8 text-gray-800 container;
+.page-pharmacy-profile .t-disable-account {
+  @apply mt-4;
 }
+
 .page-invoice .divided {
   @apply border-gray-200 my-5;
 }
@@ -924,7 +1011,7 @@ ion-icon {
 }
 
 .page-quotation-details .t-address {
-  @apply m-6 flex gap-4 items-center;
+  @apply my-6 flex gap-4 items-center;
 }
 .page-quotation-details .t-address select {
   @apply px-8 inline-block;
@@ -933,12 +1020,20 @@ ion-icon {
   @apply mt-4;
 }
 
-.page-pharmacy-orders .t-profile {
-  @apply rounded-full w-10 h-10 border-primary-light border;
-}
-
 .page-create-quotation {
-  @apply bg-secondary-lighter p-8 rounded-lg mt-8 w-11/12 mx-auto;
+  @apply bg-secondary-lighter;
+}
+.page-create-quotation .t-header {
+  @apply pb-8 text-lg  text-primary-darker;
+}
+.page-create-quotation .t-order-details {
+  @apply flex justify-between flex-row;
+}
+.page-create-quotation .t-order-details .t-user-info {
+  @apply mt-4;
+}
+.page-create-quotation .t-order-details .t-order-image {
+  @apply max-w-xs rounded-lg overflow-hidden;
 }
 .page-create-quotation .t-form-group {
   @apply flex flex-col;
@@ -970,6 +1065,46 @@ ion-icon {
 }
 .page-create-quotation .divided {
   @apply my-4;
+}
+
+.page-pharmacy-orders .t-profile {
+  @apply rounded-full w-10 h-10 border-primary-light border;
+}
+
+.page-contact-us {
+  @apply relative z-10 overflow-hidden bg-secondary-lighter/80 py-20 lg:py-[120px];
+  @apply mx-auto flex flex-wrap lg:justify-between;
+  @apply md:flex justify-between gap-16;
+}
+.page-contact-us .t-content {
+  @apply px-4 py-2;
+}
+.page-contact-us .t-title {
+  @apply text-2xl text-primary-dark font-semibold mb-4;
+}
+.page-contact-us .t-item {
+  @apply flex-1;
+}
+.page-contact-us .t-form-wrapper {
+  @apply relative rounded-lg bg-white p-8 shadow-lg sm:p-12;
+}
+.page-contact-us form label {
+  @apply mb-2 text-sm text-primary-dark;
+}
+.page-contact-us form > div {
+  @apply mb-4;
+}
+.page-contact-us .t-bg-icons span {
+  @apply absolute z-[-1];
+}
+.page-contact-us .t-bg-icons span:nth-of-type(1) {
+  @apply -top-10 -right-9;
+}
+.page-contact-us .t-bg-icons span:nth-of-type(2) {
+  @apply -right-10 top-[90px];
+}
+.page-contact-us .t-bg-icons span:nth-of-type(3) {
+  @apply -left-7 -bottom-7;
 }
 
 .page-pharmacy-profile .t-bg {

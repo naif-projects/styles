@@ -1,5 +1,9 @@
+.t-nav-wrapper {
+  @apply sticky top-0 z-[1000];
+}
+
 .nav {
-  @apply shadow px-10 py-4 pl-20;
+  @apply shadow px-10 py-4 -mx-10;
   @apply flex justify-between items-center bg-white;
 
   .menu-icon {

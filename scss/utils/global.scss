@@ -10,9 +10,17 @@ ion-icon {
   @apply text-xl;
 }
 
+.t-font-icon,
 .icon {
   @apply flex items-center;
-  @apply cursor-pointer;
+  // @apply cursor-pointer;
+}
+
+a {
+  .t-font-icon,
+  .icon {
+    @apply cursor-pointer;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -82,4 +90,8 @@ ion-icon {
     @apply block text-white mt-8;
     content: ' check your code again 😅';
   }
+}
+
+.t-mt-8 {
+  @apply mt-8;
 }

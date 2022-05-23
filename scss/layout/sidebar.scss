@@ -1,9 +1,17 @@
 .sidebar {
   @apply max-w-[15rem] w-full font-cairo whitespace-nowrap;
-  @apply min-h-screen max-h-screen px-4 bg-primary-darker text-secondary-lighter;
+  @apply min-h-screen px-4 bg-primary-darker text-secondary-lighter;
 
-  &-brand {
+  &-logo {
     @apply mt-7 inline-block text-center w-full;
+
+    .t-title {
+      @apply text-lg text-secondary-lighter font-bold;
+    }
+
+    .t-subtitle {
+      @apply text-secondary-base font-normal text-sm relative top-1;
+    }
   }
 
   .list {
@@ -11,10 +19,14 @@
   }
 
   .list-item-link {
-    @apply py-3 flex rounded items-center;
+    @apply py-3 px-4 flex rounded items-center;
 
     &.active {
       @apply relative bg-secondary-light text-primary-dark;
+
+      .t-font-icon {
+        @apply text-primary-base;
+      }
 
       .icon svg,
       .icon svg path {
@@ -28,12 +40,12 @@
     }
   }
 
-  .list-item-icon {
-    @apply w-5 mx-5;
+  .t-font-icon {
+    @apply text-xl text-secondary-lighter ml-4;
   }
 
   .icon {
-    @apply w-6 mx-6;
+    @apply w-6 ml-4;
 
     ion-icon {
       @apply text-2xl;

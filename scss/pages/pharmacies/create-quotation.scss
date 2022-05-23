@@ -1,5 +1,21 @@
 .page-create-quotation {
-  @apply bg-secondary-lighter p-8 rounded-lg mt-8 w-11/12 mx-auto;
+  @apply bg-secondary-lighter;
+
+  .t-header {
+    @apply pb-8 text-lg  text-primary-darker;
+  }
+
+  .t-order-details {
+    @apply flex justify-between flex-row;
+
+    .t-user-info {
+      @apply mt-4;
+    }
+
+    .t-order-image {
+      @apply max-w-xs rounded-lg overflow-hidden;
+    }
+  }
 
   .t-form-group {
     @apply flex flex-col;

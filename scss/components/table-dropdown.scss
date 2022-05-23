@@ -1,0 +1,24 @@
+.t-table-dropdown {
+  @apply relative;
+
+  &.is-active {
+    @apply block z-50;
+  }
+
+  &-menu-btn {
+    @apply p-1 text-xl;
+  }
+
+  &-content {
+    @apply absolute -top-10 left-0 bg-white rounded-lg px-2 py-1;
+    @apply border border-secondary-light;
+
+    div {
+      @apply py-2;
+    }
+
+    * + * {
+      @apply border-t border-secondary-light;
+    }
+  }
+}

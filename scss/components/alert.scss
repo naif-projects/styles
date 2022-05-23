@@ -1,7 +1,7 @@
 .alert-box {
   @apply p-4 px-16 fixed bottom-8 left-5 bg-green-500 text-secondary-lighter;
   @apply rounded-lg border border-green-300 shadow text-white;
-  @apply inline-block;
+  @apply inline-block z-[1000];
 }
 
 .error {

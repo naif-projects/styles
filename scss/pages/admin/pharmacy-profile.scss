@@ -1,5 +1,7 @@
-.pharmacy-profile {
-  @apply mt-16 mx-9 shadow p-10 rounded-lg;
+.page-pharmacy-profile {
+  .t-pharmacy-content {
+    @apply mt-8;
+  }
 
   .pharmacy-info {
     @apply flex flex-col justify-center lg:flex-row lg:justify-between gap-4;
@@ -67,5 +69,10 @@
     .btn {
       @apply mt-6;
     }
+  }
+
+  .t-disable-account {
+    @apply mt-4;
+    // border border-red-500 px-4 py-2;;
   }
 }

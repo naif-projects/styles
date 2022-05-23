@@ -1,0 +1,15 @@
+.t-footer {
+  @apply bg-primary-darker py-4;
+
+  .t-social {
+    @apply flex justify-center gap-2 mt-2;
+
+    img {
+      @apply w-6;
+    }
+  }
+
+  .t-links {
+    @apply mt-4 flex gap-4 items-center justify-center;
+  }
+}

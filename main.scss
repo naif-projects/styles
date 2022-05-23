@@ -3,6 +3,7 @@
 @import 'scss/components/badge.scss'; 
 @import 'scss/components/buttons.scss'; 
 @import 'scss/components/dropdown.scss'; 
+@import 'scss/components/footer.scss'; 
 @import 'scss/components/form.scss'; 
 @import 'scss/components/image.scss'; 
 @import 'scss/components/modal.scss'; 
@@ -10,6 +11,7 @@
 @import 'scss/components/or.scss'; 
 @import 'scss/components/order-details.scss'; 
 @import 'scss/components/quotation-form.scss'; 
+@import 'scss/components/table-dropdown.scss'; 
 @import 'scss/components/table.scss'; 
 @import 'scss/custom/wallet.scss'; 
 @import 'scss/layout/dashboard.scss'; 
@@ -22,12 +24,14 @@
 @import 'scss/utils/global.scss'; 
 @import 'scss/utils/typography.scss'; 
 @import 'scss/pages/admin/ads.scss'; 
+@import 'scss/pages/admin/index.scss'; 
 @import 'scss/pages/admin/manage-website.scss'; 
 @import 'scss/pages/admin/pharmacy-profile.scss'; 
 @import 'scss/pages/admin/users.scss'; 
 @import 'scss/pages/clients/invoice.scss'; 
 @import 'scss/pages/clients/page-quotation-details.scss'; 
+@import 'scss/pages/pharmacies/create-quotation.scss'; 
 @import 'scss/pages/pharmacies/orders.scss'; 
-@import 'scss/pages/pharmacies/page-create-quotation.scss'; 
+@import 'scss/pages/web/contact-us.scss'; 
 @import 'scss/pages/web/pharamcy-profile.scss'; 
 @import 'scss/pages/web/pharmacies.scss';

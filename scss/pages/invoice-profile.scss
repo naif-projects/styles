@@ -1,6 +1,14 @@
 .page-invoice-profile {
   @apply mt-8;
 
+  .t-wallet-wrapper {
+    @apply flex justify-end items-center;
+  }
+
+  .t-wallet {
+    @apply flex justify-end items-center gap-2 bg-secondary-lighter py-1 px-5 border border-secondary-light rounded-md;
+  }
+
   .t-bg {
     @apply min-h-[20rem] bg-primary-light rounded-lg;
   }
@@ -29,7 +37,7 @@
 }
 
 .page-invoice-profile .t-content {
-  @apply mt-8;
+  @apply mt-8 bg-white;
 
   header {
     @apply flex gap-3 items-center;
@@ -41,6 +49,10 @@
 
   .t-log-data {
     @apply ring-1 ring-gray-200 p-8 rounded-lg;
+
+    .t-font-icon {
+      @apply text-primary-base text-2xl;
+    }
   }
 
   .t-list {
@@ -48,7 +60,7 @@
   }
 
   .t-item {
-    @apply pr-16  relative;
+    @apply pr-8  relative;
 
     // header
     &-header {
@@ -58,7 +70,7 @@
         @apply text-lg font-semibold flex  items-center;
 
         &::before {
-          @apply w-6 h-6 rounded-full bg-red-500  absolute top-0 -right-3;
+          @apply w-4 h-4 rounded-full bg-red-500  absolute top-2 -right-2 ring-8 ring-red-500/10;
 
           content: '';
         }

@@ -1,0 +1,21 @@
+.page-admin-report {
+  .t-chart {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+
+    &-item {
+      @apply border border-secondary-base border-dashed p-4 rounded;
+
+      canvas {
+        @apply w-full max-h-[400px];
+      }
+
+      &:nth-of-type(4) {
+        @apply lg:col-span-3;
+      }
+    }
+
+    &-title {
+      @apply text-primary-base text-xl mb-4;
+    }
+  }
+}

@@ -6,11 +6,11 @@
   }
 
   &-content {
-    @apply flex-1 pb-14 overflow-x-hidden max-h-screen;
+    @apply flex-1 pb-14 px-4 lg:px-10  overflow-x-hidden max-h-screen;
     // width: 100%;
 
     main {
-      @apply pr-10 pt-10 min-h-full;
+      @apply mt-10 min-h-full;
     }
   }
 

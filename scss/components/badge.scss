@@ -1,20 +1,24 @@
 .badge {
   @apply inline-block px-2 py-1 rounded text-center;
-  @apply text-sm font-bold  whitespace-nowrap align-baseline;
+  @apply text-xs font-bold  whitespace-nowrap align-baseline;
 
   &-primary {
-    @apply bg-blue-500 text-blue-100;
-  }
-
-  &-info {
-    @apply bg-sky-500 text-sky-100;
+    @apply bg-[#f3f4f6] text-[#1f2937] border-[#1f2937]/30;
   }
 
   &-success {
-    @apply bg-green-500 text-green-100;
+    @apply bg-[#d1fae5] text-[#0d644b] border-[#0d644b]/30;
+  }
+
+  &-info {
+    @apply bg-[#dbeafe] text-[#2849b3] border-[#2849b3]/30;
+  }
+
+  &-warning {
+    @apply bg-[#fef3c7] text-[#92400e] border-[#92400e]/30;
   }
 
   &-danger {
-    @apply bg-red-500 text-red-100;
+    @apply bg-[#fee2e2] text-[#991b1b] border-[#991b1b]/30;
   }
 }

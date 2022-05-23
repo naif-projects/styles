@@ -1,0 +1,53 @@
+.page-contact-us {
+  @apply relative z-10 overflow-hidden bg-secondary-lighter/80 py-20 lg:py-[120px];
+  @apply mx-auto flex flex-wrap lg:justify-between;
+  @apply md:flex justify-between gap-16;
+
+  .t-content {
+    @apply px-4 py-2;
+  }
+
+  .t-title {
+    @apply text-2xl text-primary-dark font-semibold mb-4;
+  }
+
+  .t-item {
+    @apply flex-1;
+  }
+
+  // form
+  .t-form-wrapper {
+    @apply relative rounded-lg bg-white p-8 shadow-lg sm:p-12;
+  }
+
+  form {
+    label {
+      @apply mb-2 text-sm text-primary-dark;
+    }
+
+    & > div {
+      @apply mb-4;
+    }
+  }
+
+  .t-bg-icons {
+    span {
+      @apply absolute z-[-1];
+
+      &:nth-of-type(1) {
+        @apply -top-10 -right-9;
+      }
+
+      &:nth-of-type(2) {
+        @apply -right-10 top-[90px];
+      }
+
+      &:nth-of-type(3) {
+        @apply -left-7 -bottom-7;
+      }
+    }
+
+    //
+    //
+  }
+}

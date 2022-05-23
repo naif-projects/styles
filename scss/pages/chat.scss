@@ -63,12 +63,16 @@
 // message
 .page-chat .t-chat-messages {
   &-list {
-    @apply min-h-[10rem] max-h-96 overflow-x-hidden py-2;
+    @apply max-h-96 overflow-x-hidden py-2;
     @apply border-t border-b border-gray-200;
 
     &::-webkit-scrollbar {
       @apply w-0 opacity-0;
     }
+  }
+
+  .t-chat-messages-list {
+    @apply min-h-[28rem];
   }
 
   // time
@@ -92,7 +96,7 @@
     @apply flex gap-2 items-center mb-2;
 
     &-avatar img {
-      @apply object-cover rounded-full 
+      @apply object-cover rounded-full
       border-2
       border-secondary-lighter;
     }
@@ -115,7 +119,7 @@
   }
 
   &-form {
-    @apply border-none border-gray-300 py-4 relative;
+    @apply border-none border-gray-300 relative;
 
     input {
       @apply w-full pl-24 border;
