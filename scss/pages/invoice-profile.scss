@@ -70,7 +70,7 @@
         @apply text-lg font-semibold flex  items-center;
 
         &::before {
-          @apply w-4 h-4 rounded-full bg-red-500  absolute top-2 -right-2 ring-8 ring-red-500/10;
+          @apply w-4 h-4 rounded-full bg-primary-base  absolute top-2 -right-2 ring-8 ring-primary-base/10;
 
           content: '';
         }

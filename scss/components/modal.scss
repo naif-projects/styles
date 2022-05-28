@@ -1,7 +1,7 @@
 // modal
 .t-modal {
   @apply w-screen h-screen bg-gray-800/40 fixed top-0 left-0 z-50;
-  @apply hidden justify-center items-center px-6;
+  @apply hidden justify-center items-center px-6 z-[2000];
 
   &.open {
     @apply flex;
